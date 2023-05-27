@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title> Prédiction</title>
+
+      <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+      <!-- Font Awesome -->
+      <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+      <link href="{{ url_for('static', filename='nprogress/nprogress.css') }}" rel="stylesheet">
+      <!-- iCheck -->
+    <link href="{{ url_for('static', filename='iCheck/skins/flat/green.css') }}" rel="stylesheet">
+      <!-- bootstrap-progressbar -->
+      <link href="{{ url_for('static', filename='bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- JQVMap -->
+      <link href="{{ url_for('static', filename='jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+      <link href="{{ url_for('static', filename='bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+      <!-- Custom Theme Style -->
+      <link href="{{ url_for('static', filename='css1/custom.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='switchery/dist/switchery.min.css') }}" rel="stylesheet">
+          <link href="{{ url_for('static', filename='dropzone/dist/min/dropzone.min.css') }}" rel="stylesheet">
+
+
+
+
+      <style>
+#upload_button{
+    margin-left:800px;
+}
+
+
+div.upload {
+    background-color:#fff;
+    border: 1px solid #ddd;
+    border-radius:5px;
+    display:inline-block;
+    height: 30px;
+    padding:3px 40px 3px 3px;
+    position:relative;
+    width: auto;
+}
+
+div.upload:hover {
+    opacity:0.95;
+}
+
+div.upload input[type="file"] {
+    display: input-block;
+    width: 100%;
+    height: 30px;
+    opacity: 0;
+    cursor:pointer;
+    position:absolute;
+    left:0;
+}
+.uploadButton {
+    background-color: #425F9C;
+    border: none;
+    border-radius: 3px;
+    color: #FFF;
+    cursor:pointer;
+    display: inline-block;
+    height: 30px;
+    margin-right:15px;
+    width: auto;
+    padding:0 20px;
+    box-sizing: content-box;
+}
+
+.fileName {
+    font-family: Arial;
+    font-size:14px;
+}
+
+.upload + .uploadButton {
+    height:38px;
+}
+      </style>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+{% include "Menu.html" %}
+           <!-- page content -->
+
+          <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3></h3>
+            </div>
+
+
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="x_panel">
+
+            <div class="x_content">
+                  <div class="x_title">
+                    <h2><small>Prédiction</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+                    <div class="col-md-12    col-sm-12 ">
+
+                      <!-- end of user-activity-graph -->
+                      <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Prédire un conseiller</a>
+                          </li>
+                          <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Prédire plusieurs conseillers</a>
+                          </li>
+
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                          <div role="tabpanel" class="tab-pane active " id="tab_content1" aria-labelledby="home-tab">
+
+                  <form action="/prediction/{{data.ID_conseiller}}" method="post" autocomplete="off" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+                  <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">N° conseiller<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input  value="{{data.ID_conseiller}}" maxlength="8" minlength="8" name="id" type="text" name="id" id="id" required class="form-control">
+                      </div>
+                      <a href = "javascript:;" onclick = "this.href='/get_predict_customer/' + document.getElementById('id').value" >
+                <button type="button"  class="btn btn-round btn-info" ><i class="fa fa-search"></i></button></a>
+                    </div>
+
+                        {% if message %}
+                      <div class="item form-group" style="padding-left:25%">
+                      <div class="col-md-4 col-sm-4 ">
+                      <b><span id="sp" style="color:red;">  * {{ message }}</span></b>
+                      </div>
+                        </div>
+                      {% endif %}
+
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="nom">Nom<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input value="{{data.Nom}}" type="text" name="nom" id="nom" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Pays<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <select data-value="{{data.Pays}}" class="form-control"  id="pays" name="pays" readonly="true">
+                          <option {% if data.Pays=="Tunisie" %} selected="selected"{% endif %}>Tunisie</option>
+                          <option {% if data.Pays=="Algerie" %} selected="selected"{% endif %}>Algerie</option>
+                          <option {% if data.Pays=="CIV" %} selected="selected"{% endif %}>CIV</option>
+
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Genre</label>
+                      <div class="col-md-6 col-sm-6 ">
+                        <div id="genre" class="btn-group" data-toggle="buttons">
+                            <input  {% if data.Genre=="Homme" %} checked="checked"{% endif %} type="radio" name="genre" value="Homme" class="flat" required readonly="true"> &nbsp; Homme &nbsp;
+                            <input {% if data.Genre=="Femme" %} checked="checked"{% endif %} type="radio" name="genre" value="Femme" class="flat" readonly="true"> Femme
+                        </div>
+                      </div>
+                    </div>
+
+                        <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fils">Nb fils<span class="required" >*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.Nb_fils}}" type="number" id="Nb_fils" name="Nb_fils" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+
+                     <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="CE">Chiffre équipe<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.CE}}" type="number" id="CE" name="CE" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="CP">Chiffre personnel<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.CP}}" type="number" id="CP" name="CP" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="NB_cheque">NB cheques<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.NB_cheque}}" type="number" id="NB_cheque" name="NB_cheque" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Prime_parrainage">Prime parrainage<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.Prime_parrainage}}" type="number" id="Prime_parrainage" name="Prime_animation" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Prime_animation">Prime animation<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.Prime_animation}}" type="number" id="Prime_animation" name="Prime_animation" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fois_actif">Nb fois actif<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.Nb_fois_actif}}" type="number" id="Nb_fois_actif" name="Nb_fois_actif" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Date_inscription">Date inscription<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.Date_inscription}}" type="date" id="Date_inscription" name="Date_inscription" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Grade">Grade <span class="required">*</span>
+                      </label>
+                       <div class="col-md-2 col-sm-2 ">
+                        <select data-value="{{data.Grade}}" class="form-control" id="Grade" name="Grade" readonly="true">
+                          <option {% if data.Grade==1 %} selected="selected"{% endif %}>1</option>
+                          <option {% if data.Grade==2 %} selected="selected"{% endif %}>2</option>
+                           <option {% if data.Grade==3 %} selected="selected"{% endif %}>3</option>
+                          <option {% if data.Grade==4 %} selected="selected"{% endif %}>4</option>
+                          <option {% if data.Grade==5 %} selected="selected"{% endif %}>5</option>
+                           <option {% if data.Grade==6 %} selected="selected"{% endif %}>6</option>
+                          <option {% if data.Grade==7 %} selected="selected"{% endif %}>7</option>
+                          <option {% if data.Grade==8 %} selected="selected"{% endif %}>8</option>
+                           <option {% if data.Grade==9 %} selected="selected"{% endif %}>9</option>
+                          <option {% if data.Grade==10 %} selected="selected"{% endif %}>10</option>
+                          <option {% if data.Grade==11 %} selected="selected"{% endif %}>11</option>
+                          <option {% if data.Grade==12 %} selected="selected"{% endif %}>12</option>
+                          <option {% if data.Grade==13 %} selected="selected"{% endif %}>13</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+
+                    <div class="ln_solid"></div>
+                    <div class="item form-group">
+                    <div class="msg">{{ msg }}</div>
+
+                      <div class="col-md-6 col-sm-6 offset-md-3">
+                 <a href="{{url_for('dashboard')}}">  <button class="btn btn-secondary" type="button">Annuler</button></a>
+
+              <button type="submit"class="btn btn-info">Prédire</button>
+                      </div>
+                    </div>
+
+
+
+
+                  </form>
+
+
+
+
+                          </div>
+
+                          <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+
+                    <form action="{{ url_for('prediction_much_customer') }}" method="POST" class="dropzone">
+                        <input  type="submit" value="Predict" />
+
+                    </form>
+
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          </div>
+        </div>
+
+
+
+
+           <!-- fin page content -->
+
+
+        <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename = 'jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename = 'bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- FastClick -->
+   <script src="{{ url_for('static', filename = 'fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ url_for('static', filename = 'nprogress/nprogress.js') }}"></script>
+    <!-- Chart.js -->
+    <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.min.js') }}"></script>
+    <!-- gauge.js -->
+    <script src="{{ url_for('static', filename = 'gauge.js/dist/gauge.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ url_for('static', filename = 'bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ url_for('static', filename = 'iCheck/icheck.min.js') }}"></script>
+    <!-- Skycons -->
+    <script src="{{ url_for('static', filename = 'skycons/skycons.js') }}"></script>
+    <!-- Flot -->
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.resize.js') }}"></script>
+    <!-- Flot plugins -->
+    <script src="{{ url_for('static', filename = 'flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot.curvedlines/curvedLines.js') }}"></script>
+    <!-- DateJS -->
+    <script src="{{ url_for('static', filename = 'DateJS/build/date.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ url_for('static', filename = 'moment/min/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+  <script src="{{ url_for('static', filename = 'js1/custom.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename = 'switchery/dist/switchery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename = 'dropzone/dist/min/dropzone.min.js') }}"></script>
+
+
+<script>
+    $('input[type=file]').change(function(e) {
+    $in = $(this);
+    $in.next().html($in.val());
+
+});
+
+$('.uploadButton').click(function() {
+    var fileName = $("#fileUpload").val();
+    if (fileName) {
+        alert("Vous pouvez l'enregistrer si tu veux.");
+    }
+    else {
+        alert("Svp séléctionnez un fichier");
+    }
+});
+</script>
+<!--  <script>-->
+<!--      $('#demo-form2').on('submit', function(e){-->
+<!--  $('#myModal').modal('show');-->
+<!--  e.preventDefault();-->
+<!--});-->
+<!--  </script>-->
+
+  </body>
+
+</html>
+
+
+

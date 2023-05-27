@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon.ico" type="image/ico"/>
+
+    <title> Tableau de bord</title>
+
+    <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{ url_for('static', filename='nprogress/nprogress.css') }}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{{ url_for('static', filename='iCheck/skins/flat/green.css') }}" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="{{ url_for('static', filename='bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}"
+          rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{{ url_for('static', filename='jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="{{ url_for('static', filename='bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="{{ url_for('static', filename='css1/custom.min.css') }}" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        {% include "Menu.html" %}
+
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 ">
+                    <div class="x_panel">
+                        <div class="x_content">
+                            <div class="x_title">
+                                <h2><small>Tableau de bord</small></h2>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <!--<div class='tableauPlaceholder' id='viz1623060490780' style='position: relative'><noscript><a href='#'><img alt='dash 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DF&#47;DFJHZBX6M&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;DFJHZBX6M' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;DF&#47;DFJHZBX6M&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='fr-FR' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1623060490780');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='927px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='927px';} else { vizElement.style.width='100%';vizElement.style.height='4077px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>-->
+                            <!-- page content -->
+                        </div>
+                        <div>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <div class="pull-right">
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="{{ url_for('static', filename = 'jquery/dist/jquery.min.js') }}"></script>
+        <!-- Bootstrap -->
+        <script src="{{ url_for('static', filename = 'bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- FastClick -->
+        <script src="{{ url_for('static', filename = 'fastclick/lib/fastclick.js') }}"></script>
+        <!-- NProgress -->
+        <script src="{{ url_for('static', filename = 'nprogress/nprogress.js') }}"></script>
+        <!-- Chart.js -->
+        <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.min.js') }}"></script>
+        <!-- gauge.js -->
+        <script src="{{ url_for('static', filename = 'gauge.js/dist/gauge.min.js') }}"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="{{ url_for('static', filename = 'bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+        <!-- iCheck -->
+        <script src="{{ url_for('static', filename = 'iCheck/icheck.min.js') }}"></script>
+        <!-- Skycons -->
+        <script src="{{ url_for('static', filename = 'skycons/skycons.js') }}"></script>
+        <!-- Flot -->
+        <script src="{{ url_for('static', filename = 'Flot/jquery.flot.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'Flot/jquery.flot.pie.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'Flot/jquery.flot.time.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'Flot/jquery.flot.stack.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'Flot/jquery.flot.resize.js') }}"></script>
+        <!-- Flot plugins -->
+        <script src="{{ url_for('static', filename = 'flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'flot.curvedlines/curvedLines.js') }}"></script>
+        <!-- DateJS -->
+        <script src="{{ url_for('static', filename = 'DateJS/build/date.js') }}"></script>
+        <!-- JQVMap -->
+        <script src="{{ url_for('static', filename = 'jqvmap/dist/jquery.vmap.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="{{ url_for('static', filename = 'moment/min/moment.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="{{ url_for('static', filename = 'js1/custom.min.js') }}"></script>
+        <!-- Chart.js -->
+        <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.bundle.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.js') }}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Page d'accueil</title>
+
+    <!-- Bootstrap -->
+    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+   <!-- Font Awesome -->
+      <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+      <link href="{{ url_for('static', filename='nprogress/nprogress.css') }}" rel="stylesheet">
+      <!-- iCheck -->
+    <link href="{{ url_for('static', filename='iCheck/skins/flat/green.css') }}" rel="stylesheet">
+    <!-- Datatables -->
+
+    <link href="{{ url_for('static', filename='datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+     <link href="{{ url_for('static', filename='datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}" rel="stylesheet">
+
+ <link href="{{ url_for('static', filename='datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+            <link href="{{ url_for('static', filename='css1/custom.min.css') }}" rel="stylesheet">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css-index/css/animate.css') }}">
+	        <link rel="stylesheet" id="theme-switch" href="{{ url_for('static', filename='css-index/css/style.css') }}">
+
+
+  </head>
+
+ <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+{% include "Menu.html" %}
+
+
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3></small></h3>
+              </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2><small>Page d'accueil</small></h2>
+                    <div class="nav navbar-right panel_toolbox">
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="row">
+                     <section id="fh5co-projects">
+                         <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						    <a href="{{ url_for('historique') }}" class="fh5co-project-item image-popup">
+							<img src="{{ url_for('static', filename='css-index/images/1.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: auto;">
+							<div class="fh5co-text">
+								<h2>Gestion des conseillers</h2>
+							</div>
+						    </a>
+					    </div>
+				    	<div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						    <a href="{{ url_for('dashboard') }}" class="fh5co-project-item image-popup">
+							<img src="{{ url_for('static', filename='css-index/images/4.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: auto;">
+							<div class="fh5co-text">
+								<h2>Tableau de bord</h2>
+							</div>
+						    </a>
+				    	</div>
+
+
+
+					    <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+						    <a href="{{ url_for('prediction') }}" class="fh5co-project-item image-popup">
+							<img src="{{ url_for('static', filename='css-index/images/6.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: auto;">
+							<div class="fh5co-text">
+								<h2>Prédiction </h2>
+							</div>
+						    </a>
+					    </div>
+
+		          </section>
+
+
+              </div>
+
+                </div>
+              </div>
+
+
+
+
+
+
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+          <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename = 'jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>  <!-- FastClick -->
+    <script src="{{ url_for('static', filename = 'fastclick/lib/fastclick.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'nprogress/nprogress.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'iCheck/icheck.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jszip/dist/jszip.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'pdfmake/build/pdfmake.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'pdfmake/build/vfs_fonts.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'js1/custom.min.js') }}"></script>
+
+    <script src="{{ url_for('static', filename = 'css-index/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'css-index/js/jquery.flexslider-min.js') }}"></script>
+
+
+
+
+  </body>
+</html>

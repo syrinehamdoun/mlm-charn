@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gestion des conseillers</title>
+
+    <!-- Bootstrap -->
+    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <link href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+   <!-- Font Awesome -->
+      <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+      <link href="{{ url_for('static', filename='nprogress/nprogress.css') }}" rel="stylesheet">
+      <!-- iCheck -->
+    <link href="{{ url_for('static', filename='iCheck/skins/flat/green.css') }}" rel="stylesheet">
+    <!-- Datatables -->
+
+    <link href="{{ url_for('static', filename='datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+     <link href="{{ url_for('static', filename='datatables.net-buttons-bs/css/buttons.bootstrap.min.css') }}" rel="stylesheet">
+   <link href="{{ url_for('static', filename='datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css') }}" rel="stylesheet">
+
+ <link href="{{ url_for('static', filename='datatables.net-responsive-bs/css/responsive.bootstrap.min.css') }}" rel="stylesheet">
+      <link href="{{ url_for('static', filename='datatables.net-scroller-bs/css/scroller.bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Custom Theme Style -->
+            <link href="{{ url_for('static', filename='css1/custom.min.css') }}" rel="stylesheet">
+   <style>
+#upload_button{
+    margin-left:900px;
+    margin-bottom:50px;
+}
+
+
+div.upload {
+    background-color:#fff;
+    border: 1px solid #ddd;
+    border-radius:5px;
+    display:inline-block;
+    height: 30px;
+    padding:3px 40px 3px 3px;
+    position:relative;
+    width: auto;
+}
+
+div.upload:hover {
+    opacity:0.95;
+}
+
+div.upload input[type="file"] {
+    display: input-block;
+    width: 100%;
+    height: 30px;
+    opacity: 0;
+    cursor:pointer;
+    position:absolute;
+    left:0;
+}
+.uploadButton {
+    background-color: #425F9C;
+    border: none;
+    border-radius: 3px;
+    color: #FFF;
+    cursor:pointer;
+    display: inline-block;
+    height: 30px;
+    margin-right:15px;
+    width: auto;
+    padding:0 20px;
+    box-sizing: content-box;
+}
+
+.fileName {
+    font-family: Arial;
+    font-size:14px;
+}
+
+.upload + .uploadButton {
+    height:38px;
+}
+#datatable td
+{
+    text-align: center;
+    vertical-align: middle;
+
+
+}
+#datatable th
+{
+    text-align: center;
+    vertical-align: middle;
+
+
+}
+      </style>
+  </head>
+
+ <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+{% include "Menu.html" %}
+
+
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="">
+            <div class="page-title">
+              <div class="title_left">
+                <h3></small></h3>
+              </div>
+
+
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+
+
+
+
+              <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2><small>Listes des conseillers</small></h2>
+                    <div class="nav navbar-right panel_toolbox">
+                        <a href="/add_customer"><img src="{{ url_for('static', filename='images/AU1.png') }}" alt="Image" style="width: 6%;margin-left: 90%"></a>
+
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      <div class="row">
+                          <div class="col-sm-12">
+
+
+                            <div class="card-box table-responsive">
+<!--                            <div  id="upload_button">-->
+<!--                                  <form enctype="multipart/form-data" action="{{ url_for('uploadFiles') }}" method="POST">-->
+<!--                                      <div class="upload">-->
+<!--                                         <input type="file" name="file" id="fileUpload" />-->
+<!--                                         <span class="fileName">Select fichier..</span>-->
+<!--                                         </div>-->
+<!--                                        <input  type="submit" class="uploadButton" value="Upload File" />-->
+<!--                                  </form>-->
+<!--                              </div>-->
+
+                           <form enctype="multipart/form-data" action="{{ url_for('uploadFiles') }}" method="POST">
+                                  <div class="col-sm-6">
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                             <input  type="submit"  value="Confirmer" style="font-weight: 400;line-height: 1.5;color: #495057;background-color: #dee2e6;border: 1px solid #ced4da;border-radius: .25rem;"/>
+                                          </div>
+
+                                        <div class="custom-file">
+                                            <input type="file" name="file" class="custom-file-input" id="customFileLang" lang="pl-Pl">
+                                            <label class="custom-file-label" for="customFileLang">Sélectionner la liste des conseillers
+
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                  </div>
+                              </form>
+
+                            <br> <br>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                      <thead>
+                        <tr>
+                          <th>N° Conseiller</th>
+                          <th>Nom</th>
+                          <th>Age</th>
+                          <th>Genre</th>
+                          <th>Pays</th>
+                          <th>Grade</th>
+                          <th>Nb fils direct</th>
+                          <th>Nb fils</th>
+                          <th>Chiffre équipe</th>
+                          <th>Chiffre personnel</th>
+                           <th>NB de cheques</th>
+                          <th>Prime animation</th>
+                          <th>Prime parrainage</th>
+                          <th>Date de naissance</th>
+                          <th>Date d'inscription</th>
+                          <th>Nb fois actif</th>
+                          <th>Etat</th>
+                            <th>Actions</th>
+                        </tr>
+                      </thead>
+
+
+                   <tbody>
+                   {% for row in conseillers %}
+
+
+                   <tr>
+
+                       <td>{{row.ID_conseiller}}</td>
+                       <td>{{row.Nom}}</td>
+                       <td>{{row.Age}}</td>
+                       <td>{{row.Grade}}</td>
+                       <td>{{row.Nb_fils_direct}}</td>
+                       <td>{{row.Nb_fils}}</td>
+                       <td>{{row.CE}}</td>
+                       <td>{{row.CP}}</td>
+                       <td>{{row.NB_cheque}}</td>
+                       <td>{{row.Prime_animation}}</td>
+                       <td>{{row.Prime_parrainage}}</td>
+                       <td>{{row.Date_naissance}}</td>
+                       <td>{{row.Date_inscription}}</td>
+                       <td>{{row.Nb_fois_actif}}</td>
+
+<td>
+    <div class="btn-group">
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                      action
+                                                                </button>
+                           <div class="dropdown-menu">
+                         <a class="dropdown-item" href="/get_customer/{{row.ID_conseiller}}">Modifier</a>
+                         <a class="dropdown-item" h href="/delete_customer/{{row.ID_conseiller}}"  id="a">Supprimer</a>
+                         <a class="dropdown-item" href="/get_customerPred/{{row.ID_conseiller}}">Prédire</a>
+                              </div>
+                    </div>
+
+</td>
+
+
+
+<!--                       <td>-->
+<!--                           &lt;!&ndash; update button&ndash;&gt;-->
+<!--                        <div class="fa-hover col-md-3 col-sm-4  "><a href="/get_customer/{{row.IdClient}}"  ><i class="fa fa-edit"></i> </a></div>-->
+<!--                           &lt;!&ndash; delete button&ndash;&gt;-->
+<!--                        <div class="fa-hover col-md-3 col-sm-4  "><a href="/delete_customer/{{row.IdClient}}" id="a"><i class="fa fa-trash"></i></a></div>-->
+
+<!--                       </td>-->
+<!--&lt;!&ndash;                       &lt;!&ndash; predict button&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                        <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                           <a href="/get_predict_customer/{{row.IdClient}}" > <button type="button" class="btn btn-round btn-info">Predict</button></a>&ndash;&gt;-->
+<!--&lt;!&ndash;                       </td>&ndash;&gt;-->
+
+                   </tr>
+                   {% endfor %}
+                    </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+                </div>
+              </div>
+
+
+
+
+
+
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+          <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename = 'jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+   <script src="{{ url_for('static', filename = 'bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- FastClick -->
+     <script src="{{ url_for('static', filename = 'fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+     <script src="{{ url_for('static', filename = 'nprogress/nprogress.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ url_for('static', filename = 'iCheck/icheck.min.js') }}"></script>
+    <!-- Datatables -->
+    <script src="{{ url_for('static', filename = 'datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+     <script src="{{ url_for('static', filename = 'datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-responsive-bs/js/responsive.bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'datatables.net-scroller/js/dataTables.scroller.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jszip/dist/jszip.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'pdfmake/build/pdfmake.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'pdfmake/build/vfs_fonts.js') }}"></script>
+
+    <!-- Custom Theme Scripts -->
+ <script src="{{ url_for('static', filename = 'js1/custom.min.js') }}"></script>
+
+ <script>
+const btnDelete= document.querySelectorAll('#a');
+if(btnDelete) {
+  const btnArray = Array.from(btnDelete);
+  btnArray.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      if(!confirm('Are you sure you want to delete it?')){
+        e.preventDefault();
+      }
+    });
+  })
+}
+
+</script>
+<script>
+    $('input[type=file]').change(function(e) {
+    $in = $(this);
+    $in.next().html($in.val());
+
+});
+
+$('.uploadButton').click(function() {
+    var fileName = $("#fileUpload").val();
+    if (fileName) {
+        alert("Vous pouvez l'enregistrer si tu veux.");
+    }
+    else {
+        alert("Svp séléctionnez un fichier");
+    }
+});
+</script>
+  </body>
+</html>

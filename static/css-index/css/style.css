@@ -1,0 +1,293 @@
+
+p, figure {
+  margin-bottom: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #484c50;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+}
+
+
+.boxed #fh5co-page {
+  max-width: 1340px;
+  max-width: 1140px;
+  margin: 0 auto;
+  background: #fff;
+  -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 1200px) {
+  .boxed #fh5co-page {
+    max-width: 1060px;
+    max-width: 960px;
+  }
+}
+.boxed #fh5co-page .container {
+  max-width: 1140px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1200px) {
+  .boxed #fh5co-page .container {
+    max-width: 960px;
+    max-width: 780px;
+  }
+}
+
+#fh5co-projects,
+
+#fh5co-footer {
+  background-color: #fff;
+  padding: 7em 0;
+}
+@media screen and (max-width: 768px) {
+
+  #fh5co-projects,
+
+  #fh5co-footer {
+    padding: 3em 0;
+  }
+}
+
+#fh5co-projects {
+  background: #f9f9f9;
+}
+#fh5co-projects .fh5co-lead {
+  font-size: 50px;
+  font-weight: 300;
+  color: #484c50;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-projects .fh5co-lead {
+    font-size: 35px;
+  }
+}
+#fh5co-projects .fh5co-sub-lead {
+  font-size: 18px;
+  line-height: 32px;
+  font-weight: 300;
+}
+#fh5co-projects .fh5co-project-item {
+  display: block;
+  width: 100%;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+  z-index: 9;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+#fh5co-projects .fh5co-project-item img {
+  z-index: 8;
+  opacity: 1;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+#fh5co-projects .fh5co-project-item .fh5co-text {
+  padding: 30px 10px 10px 20px;
+  text-align: center;
+}
+#fh5co-projects .fh5co-project-item .fh5co-text h2, #fh5co-projects .fh5co-project-item .fh5co-text span {
+  text-decoration: none !important;
+}
+#fh5co-projects .fh5co-project-item .fh5co-text h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  color: #484c50;
+}
+#fh5co-projects .fh5co-project-item .fh5co-text span {
+  color: #b3b3b3;
+  font-size: 16px;
+  font-weight: 400;
+}
+#fh5co-projects .fh5co-project-item .fh5co-text p {
+  color: #85919d;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+#fh5co-projects .fh5co-project-item:hover, #fh5co-projects .fh5co-project-item:focus {
+  -webkit-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+#fh5co-projects .fh5co-project-item:hover img, #fh5co-projects .fh5co-project-item:focus img {
+  opacity: .7;
+}
+#fh5co-projects .fh5co-project-item:hover h2, #fh5co-projects .fh5co-project-item:hover span, #fh5co-projects .fh5co-project-item:focus h2, #fh5co-projects .fh5co-project-item:focus span {
+  text-decoration: none !important;
+}
+#fh5co-projects .fh5co-project-item:hover p, #fh5co-projects .fh5co-project-item:focus p {
+  color: #484c50;
+}
+
+#fh5co-features .fh5co-devices {
+  margin-bottom: 40px;
+}
+#fh5co-features .fh5co-devices img {
+  margin: 0 auto;
+}
+#fh5co-features .fh5co-lead {
+  font-size: 50px;
+  font-weight: 300;
+  color: #484c50;
+  margin-bottom: 10px;
+}
+@media screen and (max-width: 768px) {
+  #fh5co-features .fh5co-lead {
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-features .fh5co-feature {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+
+
+#fh5co-offcanvas, .fh5co-nav-toggle, #fh5co-page {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#fh5co-offcanvas, .fh5co-nav-toggle, #fh5co-page {
+  position: relative;
+}
+
+#fh5co-page {
+  z-index: 2;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.offcanvas-visible #fh5co-page {
+  -moz-transform: translateX(-275px);
+  -webkit-transform: translateX(-275px);
+  -ms-transform: translateX(-275px);
+  -o-transform: translateX(-275px);
+  transform: translateX(-275px);
+}
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1;
+}
+
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+
+
+.row-top-padded-lg {
+  padding-top: 7em;
+}
+@media screen and (max-width: 768px) {
+  .row-top-padded-lg {
+    padding-top: 2em;
+  }
+}
+
+.row-bottom-padded-md {
+  padding-bottom: 4em;
+}
+@media screen and (max-width: 768px) {
+  .row-bottom-padded-md {
+    padding-bottom: 2em;
+  }
+}
+
+.row-top-padded-md {
+  padding-top: 4em;
+}
+@media screen and (max-width: 768px) {
+  .row-top-padded-md {
+    padding-top: 2em;
+  }
+}
+
+.row-bottom-padded-sm {
+  padding-bottom: 2em;
+}
+@media screen and (max-width: 768px) {
+  .row-bottom-padded-sm {
+    padding-bottom: 2em;
+  }
+}
+
+.row-top-padded-sm {
+  padding-top: 2em;
+}
+@media screen and (max-width: 768px) {
+  .row-top-padded-sm {
+    padding-top: 2em;
+  }
+}
+
+.no-js #loader {
+  display: none;
+}
+
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+  border: 10px solid red;
+}
+
+.fh5co-loader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url(../images/Preloader_2.gif) center no-repeat #fff;
+}
+
+.js .animate-box {
+  opacity: 0;
+}
+

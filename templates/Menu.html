@@ -1,0 +1,66 @@
+<div class="col-md-3 left_col">
+    <div class="left_col scroll-view">
+        <div class="navbar nav_title" style="border: 0;">
+            <a href="{{ url_for('dashboard') }}" class="site_title"><span>MLM</span> <img
+                    src="{{ url_for('static', filename='images/pngegg.png') }}" width="15%"> <span>Churn</span> </a>
+        </div>
+
+        <div class="clearfix"></div>
+
+
+        <!-- /menu profile quick info -->
+
+        <br/>
+        <!-- sidebar menu -->
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+            <div class="menu_section">
+                <ul class="nav side-menu">
+                    <!--                    <li><a href="{{url_for('home')}}"><i class="fa fa-home"></i> Accueil </a></li>-->
+                    <li><a href="{{ url_for('dashboard') }}"><i class="fa fa-bar-chart-o"></i> Tableau de bord </a></li>
+                    <li><a href="{{ url_for('historique') }}"><i class="fa fa-group"></i> Gestion des Conseillers </a></li>
+                    <li><a href="{{ url_for('prediction') }}"><i class="fa fa-pie-chart"></i> Prédiction </a></li>
+                    <li><a href="{{ url_for('analyse') }}"><i class="fa fa-search"></i> Analyse </a></li>
+
+
+                    {% if session['role']=='Super Admin' %}
+                    <li><a href="{{ url_for('user_list') }}"><i class="fa fa-user"></i>Gestion des utilisateurs </a>
+                    </li>
+
+
+                    {% endif %}
+                </ul>
+            </div>
+
+        </div>
+        <!-- /sidebar menu -->
+
+        <!-- /menu footer buttons -->
+    </div>
+</div>
+<!-- top navigation -->
+<div class="top_nav">
+    <div class="nav_menu">
+        <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+        </div>
+        <nav class="nav navbar-nav">
+            <ul class=" navbar-right">
+                <li class="nav-item dropdown open" style="padding-left: 15px;">
+                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
+                       data-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="">{{username}}
+                    </a>
+                    <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+
+
+                        <a class="dropdown-item" href="javascript:;"></a>
+                        <a class="dropdown-item" href="{{ url_for('logout') }}"><i
+                                class="fa fa-sign-out pull-right"></i> Déconnexion</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<!-- /top navigation -->

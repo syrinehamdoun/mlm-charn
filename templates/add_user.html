@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title> Ajout utilisateur</title>
+
+      <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+      <!-- Font Awesome -->
+      <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+      <link href="{{ url_for('static', filename='nprogress/nprogress.css') }}" rel="stylesheet">
+      <!-- iCheck -->
+    <link href="{{ url_for('static', filename='iCheck/skins/flat/green.css') }}" rel="stylesheet">
+      <!-- bootstrap-progressbar -->
+      <link href="{{ url_for('static', filename='bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- JQVMap -->
+      <link href="{{ url_for('static', filename='jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+      <link href="{{ url_for('static', filename='bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+      <!-- Custom Theme Style -->
+      <link href="{{ url_for('static', filename='css1/custom.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='switchery/dist/switchery.min.css') }}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+{% include "Menu.html" %}
+
+
+        <!-- page content -->
+          <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Ajouter un utilisateur</h3>
+            </div>
+
+
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2><small>Nouveau utilisateur</small></h2>
+
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <br />
+                  <form action="{{ url_for('add_user') }}" method="post" autocomplete="off" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" >Nom d'utilisateur<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input type="text" name="login" id="login" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" >Mot de passe<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input type="password" id="password"  name="password" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+                          <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" >Email<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input type="email" id="email"  name="email" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+
+                      <div class="item form-group">
+                          <label class="col-form-label col-md-3 col-sm-3 label-align">Super Admin <span
+                                  class="required">*</span>
+                          </label>
+                          <div class="col-md-2 col-sm-2 ">
+                              <div class="">
+                                  <label>
+                                      <input type="checkbox" class="js-switch" name="role" id="role"/>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+
+
+
+                    <div class="ln_solid"></div>
+                    <div class="item form-group">
+                    <div class="msg">{{ msg }}</div>
+
+                      <div class="col-md-6 col-sm-6 offset-md-3">
+                        <button class="btn btn-primary" type="button">Cancel</button>
+                        <button class="btn btn-primary" type="reset">Reset</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          </div>
+        </div>
+
+        <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename = 'jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename = 'bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- FastClick -->
+   <script src="{{ url_for('static', filename = 'fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ url_for('static', filename = 'nprogress/nprogress.js') }}"></script>
+    <!-- Chart.js -->
+    <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.min.js') }}"></script>
+    <!-- gauge.js -->
+    <script src="{{ url_for('static', filename = 'gauge.js/dist/gauge.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ url_for('static', filename = 'bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ url_for('static', filename = 'iCheck/icheck.min.js') }}"></script>
+    <!-- Skycons -->
+    <script src="{{ url_for('static', filename = 'skycons/skycons.js') }}"></script>
+    <!-- Flot -->
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.resize.js') }}"></script>
+    <!-- Flot plugins -->
+    <script src="{{ url_for('static', filename = 'flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot.curvedlines/curvedLines.js') }}"></script>
+    <!-- DateJS -->
+    <script src="{{ url_for('static', filename = 'DateJS/build/date.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ url_for('static', filename = 'moment/min/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+  <script src="{{ url_for('static', filename = 'js1/custom.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename = 'switchery/dist/switchery.min.js') }}"></script>
+
+  </body>
+</html>

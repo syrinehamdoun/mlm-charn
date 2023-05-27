@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title> Prédiction</title>
+
+      <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+      <!-- Font Awesome -->
+      <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+      <link href="{{ url_for('static', filename='nprogress/nprogress.css') }}" rel="stylesheet">
+      <!-- iCheck -->
+    <link href="{{ url_for('static', filename='iCheck/skins/flat/green.css') }}" rel="stylesheet">
+      <!-- bootstrap-progressbar -->
+      <link href="{{ url_for('static', filename='bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- JQVMap -->
+      <link href="{{ url_for('static', filename='jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+      <link href="{{ url_for('static', filename='bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+      <!-- Custom Theme Style -->
+      <link href="{{ url_for('static', filename='css1/custom.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='switchery/dist/switchery.min.css') }}" rel="stylesheet">
+          <link href="{{ url_for('static', filename='dropzone/dist/min/dropzone.min.css') }}" rel="stylesheet">
+
+
+
+
+      <style>
+#upload_button{
+    margin-left:800px;
+}
+
+
+div.upload {
+    background-color:#fff;
+    border: 1px solid #ddd;
+    border-radius:5px;
+    display:inline-block;
+    height: 30px;
+    padding:3px 40px 3px 3px;
+    position:relative;
+    width: auto;
+}
+
+div.upload:hover {
+    opacity:0.95;
+}
+
+div.upload input[type="file"] {
+    display: input-block;
+    width: 100%;
+    height: 30px;
+    opacity: 0;
+    cursor:pointer;
+    position:absolute;
+    left:0;
+}
+.uploadButton {
+    background-color: #425F9C;
+    border: none;
+    border-radius: 3px;
+    color: #FFF;
+    cursor:pointer;
+    display: inline-block;
+    height: 30px;
+    margin-right:15px;
+    width: auto;
+    padding:0 20px;
+    box-sizing: content-box;
+}
+
+.fileName {
+    font-family: Arial;
+    font-size:14px;
+}
+
+.upload + .uploadButton {
+    height:38px;
+}
+
+
+.drop-zone {
+  max-width: 500px;
+  height: 270px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  color: #cccccc;
+  border: 4px dashed #009578;
+  border-radius: 10px;
+  margin-bottom :50px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+  background-size: cover;
+  position: relative;
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  text-align: center;
+}
+
+      </style>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+{% include "Menu.html" %}
+           <!-- page content -->
+
+          <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3></h3>
+            </div>
+
+
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="x_panel">
+
+<div class="x_content">
+                      <div class="x_title">
+                    <h2><small>Prédiction</small></h2>
+                    <div class="clearfix"></div>
+                  </div>
+
+                    <div class="col-md-12    col-sm-12 ">
+                      <!-- end of user-activity-graph -->
+                      <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Prédire un conseiller</a>
+                          </li>
+                          <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Prédire plusieurs conseillers</a>
+                          </li>
+
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                          <div role="tabpanel" class="tab-pane active " id="tab_content1" aria-labelledby="home-tab">
+            <form action="{{ url_for('prediction') }}" method="post" autocomplete="off" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">N° conseiller<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input type="text" name="id" id="id" maxlength="8" minlength="8" name="id" required class="form-control ">
+                      </div>
+            <a href = "javascript:;" onclick = "this.href='/get_predict_customer/' + document.getElementById('id').value">
+                <button type="button"  class="btn btn-round btn-info" ><i class="fa fa-search"></i></button></a>
+                    </div>
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="nom">Nom<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input type="text" name="nom" id="nom" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Pays<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <select class="form-control" id="pays" name="pays" disabled>
+                          <option>Tunisie</option>
+                          <option>Algérie</option>
+                          <option>Cote d'ivoire</option>
+
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" >Date naissance<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="date" id="Date_naissance"  name="Date_naissance" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+
+                <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" >Date inscription<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="date" id="Date_inscription"  name="Date_inscription" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Genre</label>
+                      <div class="col-md-6 col-sm-6 ">
+
+                       <div id="genre" class="btn-group" data-toggle="buttons">
+                                <input type="radio" name="genre" value="Homme" class="flat" required disabled> &nbsp; Homme &nbsp; <br>
+                                <input type="radio" name="genre" value="Femme" class="flat" disabled>   &nbsp; Femme
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                        <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fois_actif">Nb fois actif<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="Nb_fois_actif" name="Nb_fois_actif" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+
+                     <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fils_direct"> Nb fils direct<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="Nb_fils_direct" name="Nb_fils_direct" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fils">Nb fils<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="Nb_fils" name="Nb_fils" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+                <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="CE">Chiffre équipe<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="CE" name="CE" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+                <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="CP">Chiffre personnel<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="CP" name="CP" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+                <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="NB_cheque">NB de cheques<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="NB_cheque" name="NB_cheque" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+                <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Prime_animation">Prime animation<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="Prime_animation" name="Prime_animation" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+                <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Prime_parrainage">Prime parrainage<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="Prime_parrainage" name="Prime_parrainage" required="required" class="form-control " disabled>
+                      </div>
+                    </div>
+
+
+
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="grade">Grade <span class="required">*</span>
+                      </label>
+                       <div class="col-md-2 col-sm-2 ">
+                        <select class="form-control" id="grade" name="grade" disabled>
+                          <option>1</option>
+                          <option>2</option>
+                           <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                           <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                           <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                          <option>13</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="ln_solid"></div>
+                    <div class="item form-group">
+                    <div class="msg">{{ msg }}</div>
+
+                      <div class="col-md-6 col-sm-6 offset-md-3">
+                  <a href="{{url_for('dashboard')}}">  <button class="btn btn-secondary" type="button">Annuler</button></a>
+                          <button type="submit" class="btn btn-info" >Prédire</button>
+
+                      </div>
+                    </div>
+
+
+                  </form>
+
+
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+   {% if prediction==0 or prediction==1  %}
+ <center>
+                        <div class="card" style="width: 25rem;">
+
+                          <div class="card-header">
+                             <h6>Information du conseiller N° <b>{{d.ID_conseiller}}</b></h6>
+                          </div>
+                          <div class="card-body">
+                              <table width="80%">
+                                  <tr>
+                                      <td><b>Nom</b></td>
+                                      <td>{{d.Nom}} </td>
+                                  </tr>
+
+                                   <tr>
+                                      <td><b>Pays</b></td>
+                                      <td>{{d.Pays}} </td>
+                                  </tr>
+
+                                   <tr>
+                                      <td><b>Genre</b></td>
+                                      <td>{{d.Genre}}</td>
+                                  </tr>
+                                   <tr>
+                                      <td><b>Grade</b></td>
+                                      <td>{{d.Grade}} </td>
+                                  </tr>
+
+                                   <tr>
+                                      <td><b>Nb fils direct</b></td>
+                                      <td>{{d.Nb_fils_direct}}</td>
+                                  </tr>
+                                   <tr>
+                                      <td><b>Nb fils</b></td>
+                                      <td>{{d.Nb_fils}}</td>
+                                  </tr>
+
+                                   <tr>
+                                       <td><b>Chiffre équipe</b></td>
+                                      <td>{{d.CE}}</td>
+                                  </tr>
+
+                                       <td><b>Chiffre personnel</b></td>
+                                      <td>{{d.CP}}</td>
+                                  </tr>
+                                  <tr>
+                                       <td><b>NB de cheques</b></td>
+                                      <td>{{d.NB_cheque}}</td>
+                                  </tr>
+                                  <tr>
+                                       <td><b>Prime animation</b></td>
+                                      <td>{{d.Prime_animation}}</td>
+                                  </tr>
+                                  <tr>
+                                       <td><b>Prime parrainage</b></td>
+                                      <td>{{d.Prime_parrainage}}</td>
+                                  </tr>
+                                  <tr>
+                                       <td><b>Date de naissance</b></td>
+                                      <td>{{d.Date_naissance}}</td>
+                                  </tr>
+                                  <tr>
+                                       <td><b>Date d'inscription</b></td>
+                                      <td>{{d.Date_inscription}}</td>
+                                  </tr>
+                                  <tr>
+                                       <td><b>Nb fois actif</b></td>
+                                      <td>{{d.Nb_fois_actif}}</td>
+                                  </tr>
+
+                              </table>
+                            </div>
+                        </div>
+                                </center>
+
+   {% endif%}
+<br>
+                        <div class="card">
+                          <div class="card-body">
+                              <h5 class="card-title">Résultat</h5>
+
+                              {% if prediction==1 %}
+                              <div class="alert alert-danger" role="alert" style="font-size:14px;">Le conseiller peut quitter l'entreprise .<br> La probabilité d'attrition est {{prediction_proba}}%</div>
+                                  {% elif prediction==0 %}
+                              <div class="alert alert-primary" role="alert" style="font-size:14px;">Le conseiller va rester.<br>  La probabilité d'attrition est {{prediction_proba}}%</div>
+                                   {% else  %}
+                                  <div></div>
+
+                         {% endif %}
+                           </div>
+                        </div>
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+          <a href="{{url_for('analyse')}}">   <button type="button" class="btn btn-info">Analyse</button></a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+                          </div>
+
+
+
+                          <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+<br><br><br><br>
+                  <form enctype="multipart/form-data" action="{{ url_for('prediction_much_customer') }}" method="POST">
+                      <center>
+
+
+                                                         <div class="drop-zone">
+                                            <span class="drop-zone__prompt">Faites glisser ici ou sélectionnez depuis votre ordinateur</span>
+                                                <input type="file" name="file" class="drop-zone__input">
+                                     </div>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          </div>
+
+
+                                    </div>
+
+                     </center>
+               <input  type="submit"  value="Prédire" class="btn btn-info" style="margin-left:1050px;"/>
+
+                              </form>
+                              <br><br><br><br><br>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          </div>
+        </div>
+
+
+
+
+           <!-- fin page content -->
+
+
+
+
+        <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename = 'jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename = 'bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- FastClick -->
+   <script src="{{ url_for('static', filename = 'fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ url_for('static', filename = 'nprogress/nprogress.js') }}"></script>
+    <!-- Chart.js -->
+    <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.min.js') }}"></script>
+    <!-- gauge.js -->
+    <script src="{{ url_for('static', filename = 'gauge.js/dist/gauge.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ url_for('static', filename = 'bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ url_for('static', filename = 'iCheck/icheck.min.js') }}"></script>
+    <!-- Skycons -->
+    <script src="{{ url_for('static', filename = 'skycons/skycons.js') }}"></script>
+    <!-- Flot -->
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.resize.js') }}"></script>
+    <!-- Flot plugins -->
+    <script src="{{ url_for('static', filename = 'flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot.curvedlines/curvedLines.js') }}"></script>
+    <!-- DateJS -->
+    <script src="{{ url_for('static', filename = 'DateJS/build/date.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ url_for('static', filename = 'moment/min/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+  <script src="{{ url_for('static', filename = 'js1/custom.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename = 'switchery/dist/switchery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename = 'dropzone/dist/min/dropzone.min.js') }}"></script>
+
+
+
+   <script type="text/javascript">
+   {% if prediction==0 or prediction==1  %}
+    $(window).on('load', function() {
+        $('#myModal').modal('show');
+    });
+    {% endif %}
+</script>
+<!--    <script>-->
+<!--      $('#demo-form2').on('submit', function(e){-->
+<!--  $('#myModal').modal('show');-->
+<!--  e.preventDefault();-->
+<!--});-->
+<!--  </script>-->
+
+
+  <script>
+      document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+  const dropZoneElement = inputElement.closest(".drop-zone");
+
+  dropZoneElement.addEventListener("click", (e) => {
+    inputElement.click();
+  });
+
+  inputElement.addEventListener("change", (e) => {
+    if (inputElement.files.length) {
+      updateThumbnail(dropZoneElement, inputElement.files[0]);
+    }
+  });
+
+  dropZoneElement.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZoneElement.classList.add("drop-zone--over");
+  });
+
+  ["dragleave", "dragend"].forEach((type) => {
+    dropZoneElement.addEventListener(type, (e) => {
+      dropZoneElement.classList.remove("drop-zone--over");
+    });
+  });
+
+  dropZoneElement.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    if (e.dataTransfer.files.length) {
+      inputElement.files = e.dataTransfer.files;
+      updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+    }
+
+    dropZoneElement.classList.remove("drop-zone--over");
+  });
+});
+
+/**
+ * Updates the thumbnail on a drop zone element.
+ *
+ * @param {HTMLElement} dropZoneElement
+ * @param {File} file
+ */
+function updateThumbnail(dropZoneElement, file) {
+  let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+  // First time - remove the prompt
+  if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+    dropZoneElement.querySelector(".drop-zone__prompt").remove();
+  }
+
+  // First time - there is no thumbnail element, so lets create it
+  if (!thumbnailElement) {
+    thumbnailElement = document.createElement("div");
+    thumbnailElement.classList.add("drop-zone__thumb");
+    dropZoneElement.appendChild(thumbnailElement);
+  }
+
+  thumbnailElement.dataset.label = file.name;
+
+
+}
+
+  </script>
+  </body>
+</html>

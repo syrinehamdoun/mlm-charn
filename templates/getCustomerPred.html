@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title> Prédiction </title>
+
+      <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+      <!-- Font Awesome -->
+      <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+      <link href="{{ url_for('static', filename='nprogress/nprogress.css') }}" rel="stylesheet">
+      <!-- iCheck -->
+    <link href="{{ url_for('static', filename='iCheck/skins/flat/green.css') }}" rel="stylesheet">
+      <!-- bootstrap-progressbar -->
+      <link href="{{ url_for('static', filename='bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- JQVMap -->
+      <link href="{{ url_for('static', filename='jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+      <link href="{{ url_for('static', filename='bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+      <!-- Custom Theme Style -->
+      <link href="{{ url_for('static', filename='css1/custom.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='switchery/dist/switchery.min.css') }}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+{% include "Menu.html" %}
+
+
+
+        <!-- page content -->
+          <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3></h3>
+            </div>
+
+
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2><small>Prédire l'attrition d'un conseiller</small></h2>
+
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <br />
+                  <form action="/predictionSingle/{{data.ID_conseiller}}" method="post" autocomplete="off" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="nom">Nom<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input value="{{data.Nom}}" type="text" name="nom" id="nom" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Pays<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <select data-value="{{data.Pays}}" class="form-control"  id="pays" name="pays" readonly="true">
+                          <option {% if data.Pays=="Tunisie" %} selected="selected"{% endif %}>Tunisie</option>
+                          <option {% if data.Pays=="Algerie" %} selected="selected"{% endif %}>Algérie</option>
+                          <option {% if data.Pays=="CIV" %} selected="selected"{% endif %}>Cote d'ivoire</option>
+
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" >Age<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.Age}}" type="number" id="age"  name="age" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+
+
+
+                        <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="solde">Solde<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.Solde}}" type="number" id="solde" name="solde" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+
+                     <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="salaire">Salaire estimé<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.SalaireEstime}}" type="number" id="salaire" name="salaire" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="score">Credit Score<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input value="{{data.CreditScore}}" type="number" id="score" name="score" required="required" class="form-control " readonly="true">
+                      </div>
+                    </div>
+
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Genre</label>
+                      <div class="col-md-6 col-sm-6 ">
+                        <div id="genre" class="btn-group" data-toggle="buttons">
+                            <input  {% if data.Genre=="Homme" %} checked="checked"{% endif %} type="radio" name="genre" value="Homme" class="flat" > &nbsp; Homme &nbsp;
+                            <input {% if data.Genre=="Femme" %} checked="checked"{% endif %} type="radio" name="genre" value="Femme" class="flat" > Femme
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="tenure">Tenure <span class="required">*</span>
+                      </label>
+                       <div class="col-md-2 col-sm-2 ">
+                        <select data-value="{{data.Tenure}}" class="form-control" id="tenure" name="tenure" readonly="true">
+                          <option {% if data.Tenure==0 %} selected="selected"{% endif %}>0</option>
+                          <option {% if data.Tenure==1 %} selected="selected"{% endif %}>1</option>
+                          <option {% if data.Tenure==2 %} selected="selected"{% endif %}>2</option>
+                           <option {% if data.Tenure==3 %} selected="selected"{% endif %}>3</option>
+                          <option {% if data.Tenure==4 %} selected="selected"{% endif %}>4</option>
+                          <option {% if data.Tenure==5 %} selected="selected"{% endif %}>5</option>
+                           <option {% if data.Tenure==6 %} selected="selected"{% endif %}>6</option>
+                          <option {% if data.Tenure==7 %} selected="selected"{% endif %}>7</option>
+                          <option {% if data.Tenure==8 %} selected="selected"{% endif %}>8</option>
+                           <option {% if data.Tenure==9 %} selected="selected"{% endif %}>9</option>
+                          <option {% if data.Tenure==10 %} selected="selected"{% endif %}>10</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" >Nombre de produits <span class="required">*</span>
+                      </label>
+                       <div class="col-md-2 col-sm-2 ">
+                        <select  class="form-control" name="nb_prod" id="nb_prod" readonly="true">
+                          <option {% if data.NbreDeProduits==1 %} selected="selected"{% endif %} >1</option>
+                          <option {% if data.NbreDeProduits==2 %} selected="selected"{% endif %}>2</option>
+                           <option {% if data.NbreDeProduits==3 %} selected="selected"{% endif %}>3</option>
+                          <option {% if data.NbreDeProduits==4 %} selected="selected"{% endif %}>4</option>
+                        </select>
+                      </div>
+                    </div>
+
+
+
+                   <div class="item form-group">
+
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Carte crédit <span class="required">*</span>
+                      </label>
+                       <div class="col-md-2 col-sm-2 ">
+
+                        <div class="">
+                          <label>
+                            <input {% if data.AvoirCarteCr==1 %} checked="checked"{% endif %} type="checkbox" class="js-switch" id="carte" name="carte"   />
+
+                          </label>
+                        </div>
+
+
+                        </div>
+                      </div>
+
+
+
+                      <div class="item form-group">
+
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Membre Actif <span class="required">*</span>
+                      </label>
+                       <div class="col-md-2 col-sm-2 ">
+
+                        <div class="">
+                          <label>
+                            <input {% if data.MembreActif==1 %} checked="checked"{% endif %} type="checkbox" class="js-switch" name="etat" id="etat" />
+                          </label>
+                        </div>
+
+
+                        </div>
+                      </div>
+
+                    <div class="ln_solid"></div>
+                    <div class="item form-group">
+                    <div class="msg">{{ msg }}</div>
+
+                      <div class="col-md-6 col-sm-6 offset-md-3">
+                          <a href="{{url_for('dashboard')}}">  <button class="btn btn-secondary" type="button">Annuler</button></a>
+                        <button type="submit" class="btn btn-info">Prédire</button>
+                      </div>
+                    </div>
+
+
+
+
+
+                  </form>
+
+                </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          </div>
+        </div>
+
+        <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename = 'jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename = 'bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- FastClick -->
+   <script src="{{ url_for('static', filename = 'fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ url_for('static', filename = 'nprogress/nprogress.js') }}"></script>
+    <!-- Chart.js -->
+    <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.min.js') }}"></script>
+    <!-- gauge.js -->
+    <script src="{{ url_for('static', filename = 'gauge.js/dist/gauge.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ url_for('static', filename = 'bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ url_for('static', filename = 'iCheck/icheck.min.js') }}"></script>
+    <!-- Skycons -->
+    <script src="{{ url_for('static', filename = 'skycons/skycons.js') }}"></script>
+    <!-- Flot -->
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.resize.js') }}"></script>
+    <!-- Flot plugins -->
+    <script src="{{ url_for('static', filename = 'flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot.curvedlines/curvedLines.js') }}"></script>
+    <!-- DateJS -->
+    <script src="{{ url_for('static', filename = 'DateJS/build/date.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ url_for('static', filename = 'moment/min/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+  <script src="{{ url_for('static', filename = 'js1/custom.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename = 'switchery/dist/switchery.min.js') }}"></script>
+
+  </body>
+</html>

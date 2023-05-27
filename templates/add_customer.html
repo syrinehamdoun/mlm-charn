@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title> Ajout conseiller </title>
+
+      <!-- Bootstrap -->
+    <link href="{{ url_for('static', filename='bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+      <!-- Font Awesome -->
+      <link href="{{ url_for('static', filename='font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- NProgress -->
+      <link href="{{ url_for('static', filename='nprogress/nprogress.css') }}" rel="stylesheet">
+      <!-- iCheck -->
+    <link href="{{ url_for('static', filename='iCheck/skins/flat/green.css') }}" rel="stylesheet">
+      <!-- bootstrap-progressbar -->
+      <link href="{{ url_for('static', filename='bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <!-- JQVMap -->
+      <link href="{{ url_for('static', filename='jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+      <link href="{{ url_for('static', filename='bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+      <!-- Custom Theme Style -->
+      <link href="{{ url_for('static', filename='css1/custom.min.css') }}" rel="stylesheet">
+
+    <link href="{{ url_for('static', filename='switchery/dist/switchery.min.css') }}" rel="stylesheet">
+
+      <link rel="stylesheet" href="{{ url_for('static', filename='toastr/toastr.min.css') }}">
+
+
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+{% include "Menu.html" %}
+
+
+
+        <!-- page content -->
+          <div class="right_col" role="main">
+        <div class="">
+          <div class="page-title">
+            <div class="title_left">
+              <h3>Ajouter un conseiller</h3>
+            </div>
+
+
+          </div>
+          <div class="clearfix"></div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 ">
+              <div class="x_panel">
+                <div class="x_title">
+                  <h2><small>Nouveau conseiller</small></h2>
+
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <br />
+                  <form action="{{ url_for('add_customer') }}" method="post" autocomplete="off" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">N° conseiller<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input type="text" maxlength="8" minlength="8" name="id" id="id" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="nom">Nom<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <input type="text" name="nom" id="nom" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Pays<span class="required">*</span>
+                      </label>
+                      <div class="col-md-4 col-sm-4 ">
+                        <select class="form-control" id="pays" name="pays">
+                          <option>Tunisie</option>
+                          <option>Algérie</option>
+                          <option>Cote d'ivoire</option>
+
+                        </select>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align">Genre</label>
+                      <div class="col-md-6 col-sm-6 ">
+
+                       <div id="genre" class="btn-group" data-toggle="buttons">
+                                <input type="radio" name="genre" value="Homme" class="flat" required> &nbsp; Homme &nbsp; <br>
+                                <input type="radio" name="genre" value="Femme" class="flat">   &nbsp; Femme
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Grade">Grade <span class="required">*</span>
+                      </label>
+                       <div class="col-md-2 col-sm-2 ">
+                        <select class="form-control" id="Grade" name="Grade">
+                          <option>1</option>
+                          <option>2</option>
+                           <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                           <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                           <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                          <option>13</option>
+                        </select>
+                      </div>
+                    </div>
+   <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fils_direct">Nb fils direct<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="0" id="Nb_fils_direct" name="Nb_fils_direct" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+
+                     <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fils">Nb fils<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="0" id="Nb_fils" name="Nb_fils" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="CE">Chiffre équipe<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="300" max="900" id="CE" name="CE" required="required" class="form-control ">
+                      </div>
+                    </div>
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="CP">Chiffre personnel<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="300" max="900" id="CP" name="CP" required="required" class="form-control ">
+                      </div>
+                    </div>
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="NB_cheque">NB de cheques<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="300" max="900" id="NB_cheque" name="NB_cheque" required="required" class="form-control ">
+                      </div>
+                    </div>
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Prime_animation">Prime animation<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="300" max="900" id="Prime_animation" name="Prime_animation" required="required" class="form-control ">
+                      </div>
+                    </div>
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Prime_parrainage">Prime parrainage<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="300" max="900" id="Prime_parrainage" name="Prime_parrainage" required="required" class="form-control ">
+                      </div>
+                    </div>
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Date_naissance">Date de naissance<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="300" max="900" id="Date_naissance" name="Date_naissance" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Date_inscription">Date d'inscription<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="300" max="900" id="Date_inscription" name="Date_inscription" required="required" class="form-control ">
+                      </div>
+                    </div>
+                      <div class="item form-group">
+                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fois_actif">Nb fois actif<span class="required">*</span>
+                      </label>
+                      <div class="col-md-2 col-sm-2 ">
+                        <input type="number" min="300" max="900" id="Nb_fois_actif" name="Nb_fois_actif" required="required" class="form-control ">
+                      </div>
+                    </div>
+
+
+                    <div class="ln_solid"></div>
+                    <div class="item form-group">
+<!--                    <div class="msg">{{ msg }}</div>-->
+
+
+                      <div class="col-md-6 col-sm-6 offset-md-3">
+                          <a href="{{url_for('historique')}}"><button class="btn btn-secondary" type="button">Annuler</button></a>
+
+
+                        <button type="submit"  class="btn btn-info">Ajouter</button>
+
+
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          </div>
+        </div>
+
+        <footer>
+          <div class="pull-right">
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static', filename = 'jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static', filename = 'bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- FastClick -->
+   <script src="{{ url_for('static', filename = 'fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ url_for('static', filename = 'nprogress/nprogress.js') }}"></script>
+    <!-- Chart.js -->
+    <script src="{{ url_for('static', filename = 'Chart.js/dist/Chart.min.js') }}"></script>
+    <!-- gauge.js -->
+    <script src="{{ url_for('static', filename = 'gauge.js/dist/gauge.min.js') }}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{ url_for('static', filename = 'bootstrap-progressbar/bootstrap-progressbar.min.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ url_for('static', filename = 'iCheck/icheck.min.js') }}"></script>
+    <!-- Skycons -->
+    <script src="{{ url_for('static', filename = 'skycons/skycons.js') }}"></script>
+    <!-- Flot -->
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.stack.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'Flot/jquery.flot.resize.js') }}"></script>
+    <!-- Flot plugins -->
+    <script src="{{ url_for('static', filename = 'flot.orderbars/js/jquery.flot.orderBars.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot-spline/js/jquery.flot.spline.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'flot.curvedlines/curvedLines.js') }}"></script>
+    <!-- DateJS -->
+    <script src="{{ url_for('static', filename = 'DateJS/build/date.js') }}"></script>
+    <!-- JQVMap -->
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/jquery.vmap.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{ url_for('static', filename = 'moment/min/moment.min.js') }}"></script>
+    <script src="{{ url_for('static', filename = 'bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- Custom Theme Scripts -->
+  <script src="{{ url_for('static', filename = 'js1/custom.min.js') }}"></script>
+
+  <script src="{{ url_for('static', filename = 'switchery/dist/switchery.min.js') }}"></script>
+<!--	<script src="{{ url_for('static', filename = 'toastr/toastr.min.js') }}"></script>-->
+<script src="{{ url_for('static', filename = 'toastr/toastr.min.js') }}"></script>
+<script>
+$(function() {
+    var a='';
+    a='{{msg}}';
+  $('.toastrDefaultSuccess').click(function() {
+
+    toastr.success(a)
+    a='';
+
+
+  });
+
+});
+</script>
+  </body>
+</html>
