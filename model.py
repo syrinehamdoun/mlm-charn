@@ -14,15 +14,8 @@ import joblib
 from sqlalchemy import create_engine
 
 # Establish a MySQL database connection
-connector = mysql.connector.connect(
-    host='localhost',
-    database='banque',
-    user='root',
-    password=''
-)
+db_connect = create_engine('mysql+mysqlconnector://root@localhost/banque')
 
-# Convert the MySQL connection into a SQLAlchemy engine
-db_connect = create_engine('mysql+mysqlconnector://', creator=lambda: db_connect)
 df = pd.read_sql('select * from client', con=db_connect)
 
 # df['Solde']=np.log10(df['Solde']+1)
