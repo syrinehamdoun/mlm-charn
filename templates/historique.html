@@ -187,7 +187,6 @@ div.upload input[type="file"] {
                         <tr>
                           <th>N° Conseiller</th>
                           <th>Nom</th>
-                          <th>Age</th>
                           <th>Genre</th>
                           <th>Pays</th>
                           <th>Grade</th>
@@ -213,9 +212,10 @@ div.upload input[type="file"] {
 
                    <tr>
 
-                       <td>{{row.ID_conseiller}}</td>
+                       <td>{{row.ID_conseiller }}</td>
                        <td>{{row.Nom}}</td>
-                       <td>{{row.Age}}</td>
+                       <td>{{row.Genre}}</td>
+                       <td>{{row.pays}}</td>
                        <td>{{row.Grade}}</td>
                        <td>{{row.Nb_fils_direct}}</td>
                        <td>{{row.Nb_fils}}</td>
@@ -227,6 +227,7 @@ div.upload input[type="file"] {
                        <td>{{row.Date_naissance}}</td>
                        <td>{{row.Date_inscription}}</td>
                        <td>{{row.Nb_fois_actif}}</td>
+                       <td>{{row.quitter}}</td>
 
 <td>
     <div class="btn-group">

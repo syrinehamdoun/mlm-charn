@@ -97,12 +97,13 @@ def add_customer():
         Date_naissance = request.form.get('Date_naissance')
         Date_inscription = request.form.get('Date_inscription')
         Nb_fois_actif = request.form.get('Nb_fois_actif')
+        quitter = request.form.get('etat')
 
 
 
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('SELECT * FROM conseillers WHERE IdConseiller = %s', (id,))
+        cursor.execute('SELECT * FROM conseillers WHERE ID_conseiller = %s', (id,))
         account = cursor.fetchone()
         # If account exists show error and validation checks
         if account:
@@ -112,7 +113,7 @@ def add_customer():
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
             cursor.execute('INSERT INTO conseillers VALUES (NULL, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                           (id, nom, Nb_fils_direct, pays, genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription,Nb_fois_actif, quitter,))
+                           (id, nom, Nb_fils_direct, pays, genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription,Nb_fois_actif, quitter))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             a = 2
@@ -120,10 +121,10 @@ def add_customer():
     return render_template('add_customer.html', username=session['username'], msg=msg, a=a)
 
 
-@app.route('/get_customer/<IdConseiller>', methods=['GET', 'POST'])
-def get_customer(IdConseiller):
+@app.route('/get_customer/<ID_conseiller>', methods=['GET', 'POST'])
+def get_customer(ID_conseiller):
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM conseillers WHERE IdConseiller = %s', (IdConseiller,))
+    cursor.execute('SELECT * FROM conseillers WHERE ID_conseiller = %s', (ID_conseiller,))
     data = cursor.fetchall()
     cursor.close()
     print(data[0])
@@ -131,8 +132,8 @@ def get_customer(IdConseiller):
     return render_template('update_customer.html', username=session['username'], data=data[0])
 
 
-@app.route('/update_customer/<IdConseiller>', methods=['GET', 'POST'])
-def update_customer(IdConseiller):
+@app.route('/update_customer/<ID_conseiller>', methods=['GET', 'POST'])
+def update_customer(ID_conseiller):
     msg = ''
     if request.method == 'POST':
         # Create variables for easy access
@@ -156,7 +157,7 @@ def update_customer(IdConseiller):
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('UPDATE conseillers set Nom=%s,Nb_fils_direct=%s,Pays=%s,Genre=%s,Grade=%s,NB_cheque=%s,'
-                       'Prime_animation=%s,Prime_parrainage=%s,Date_naissance=%s,Date_inscription=%s,Nb_fois_actif=%s,Nb_fils=%s,Quitte=%s where IdConseiller=%s',
+                       'Prime_animation=%s,Prime_parrainage=%s,Date_naissance=%s,Date_inscription=%s,Nb_fois_actif=%s,Nb_fils=%s,Quitte=%s where ID_conseiller=%s',
                        (nom, Nb_fils_direct, pays, genre, Grade, NB_cheque,Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif,Nb_fils, quitter, id))
         mysql.connection.commit()
         msg = 'You have successfully updated!'
@@ -165,15 +166,15 @@ def update_customer(IdConseiller):
     return redirect(url_for('historique'))
 
 
-@app.route('/delete_customer/<string:IdConseiller>', methods=['POST', 'GET'])
-def delete_customer(IdConseiller):
+@app.route('/delete_customer/<string:ID_conseiller>', methods=['POST', 'GET'])
+def delete_customer(ID_conseiller):
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('DELETE FROM  conseillers WHERE IdConseiller = {0}'.format(IdConseiller))
+    cursor.execute('DELETE FROM  conseillers WHERE ID_conseiller = {0}'.format(ID_conseiller))
     mysql.connection.commit()
 
-    exist=cursor.execute('Select IdConseiller from conseillers_prediction WHERE IdConseiller = {0}'.format(IdConseiller))
+    exist=cursor.execute('Select ID_conseiller from conseillers_prediction WHERE ID_conseiller = {0}'.format(ID_conseiller))
     if exist:
-        cursor.execute('DELETE FROM  conseillers_prediction WHERE IdConseiller = {0}'.format(IdConseiller))
+        cursor.execute('DELETE FROM  conseillers_prediction WHERE ID_conseiller = {0}'.format(ID_conseiller))
         mysql.connection.commit()
 
 
@@ -181,10 +182,10 @@ def delete_customer(IdConseiller):
     return redirect(url_for('historique'))
 
 
-@app.route('/delete_customer_analyse/<string:IdConseiller>', methods=['POST', 'GET'])
-def delete_customer_analyse(IdConseiller):
+@app.route('/delete_customer_analyse/<string:ID_conseiller>', methods=['POST', 'GET'])
+def delete_customer_analyse(ID_conseiller):
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('DELETE FROM  conseillers_prediction WHERE IdConseiller = {0}'.format(IdConseiller))
+    cursor.execute('DELETE FROM  conseillers_prediction WHERE ID_conseiller = {0}'.format(ID_conseiller))
     mysql.connection.commit()
     return redirect(url_for('analyse'))
 
@@ -193,8 +194,8 @@ def delete_customer_analyse(IdConseiller):
 @app.route('/historique', methods=['POST', 'GET'])
 def historique():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM conseillers where ligne>9970')
-    conseillers = cursor.fetchall()
+    cursor.execute('SELECT * FROM conseillers  where ligne>9970')
+    conseillers  = cursor.fetchall()
 
     return render_template('historique.html', username=session['username'], conseillers=conseillers)
 
@@ -222,27 +223,28 @@ def uploadFiles():
                 csv_reader = csv_reader
                 for row in csv_reader:
                     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-                    exist = cursor.execute('select IdConseiller from conseillers where IdConseiller=%s', (row[1],))
+                    exist = cursor.execute('SELECT ID_conseiller FROM conseillers WHERE ID_conseiller=%s', (row[1],))
 
                     if not exist:
-                        sql = "INSERT INTO conseillers (IdConseiller,nom, Nb_fils_direct, pays, genre, Grade, NB_cheque,Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif,Nb_fils, quitter, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                        value = (
+                        sql = "INSERT INTO conseillers (ID_conseiller, nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Nb_fils, quitter, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                        values = (
                             row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11],
-                            row[12],
-                            row[13],)
-                        cursor.execute(sql, value)
+                            row[12], row[13]
+                        )
+                        cursor.execute(sql, values)
                         mysql.connection.commit()
 
                     else:
-                        sql = "UPDATE conseillers set Nom=%s,CreditScore=%s,Pays=%s,Genre=%s,Age=%s,Tenure=%s,Solde=%s,NbreDeProduits=%s,AvoirCarteCr=%s,MembreActif=%s,SalaireEstime=%s,Quitte=%s where IdConseiller=%s"
-                        value = (
+                        sql = "UPDATE conseillers SET Nom=%s, Nb_fils_direct=%s, Pays=%s, Genre=%s, Grade=%s, NB_cheque=%s, Prime_animation=%s, Prime_parrainage=%s, Date_naissance=%s, Date_inscription=%s, Nb_fois_actif=%s, Nb_fils=%s, Quitte=%s WHERE ID_conseiller=%s"
+                        values = (
                             row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[11], row[12],
-                            row[13],
-                            row[1],)
-                        cursor.execute(sql, value)
+                            row[13], row[1]
+                        )
+                        cursor.execute(sql, values)
                         mysql.connection.commit()
                 return redirect(url_for('historique'))
             else:
+
                 raise (StopIteration, UnicodeEncodeError, csv.Error, IndexError)
 
 
@@ -332,12 +334,12 @@ def dashboard():
     return render_template('dashboard.html', username=session['username'])
 
 
-@app.route('/get_predict_customer/', defaults={'IdConseiller': 0})
-@app.route('/get_predict_customer/<IdConseiller>', methods=['GET', 'POST'])
-def get_predict_customer(IdConseiller):
+@app.route('/get_predict_customer/', defaults={'ID_conseiller': 0})
+@app.route('/get_predict_customer/<ID_conseiller>', methods=['GET', 'POST'])
+def get_predict_customer(ID_conseiller):
     message = ''
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM conseillers WHERE IdConseiller = %s', (IdConseiller,))
+    cursor.execute('SELECT * FROM conseillers WHERE ID_conseiller = %s', (ID_conseiller,))
     data = cursor.fetchone()
     if data:
         cursor.close()
@@ -360,34 +362,34 @@ clf = joblib.load('classifier.pkl')
 sca = joblib.load('scale.pkl')
 
 
-@app.route('/prediction/<IdConseiller>', methods=['GET', 'POST'])
-def predictionCustomer(IdConseiller):
+@app.route('/prediction/<ID_conseiller>', methods=['GET', 'POST'])
+def predictionCustomer(ID_conseiller):
     if request.method == 'POST':
         CreditScore = int(request.form['score'])
         Age = int(request.form['age'])
-        Tenure = int(request.form['tenure'])
+        Grade = int(request.form['Grade'])
         Solde = float(request.form['solde'])
         NbreDeProduits = int(request.form['nb_prod'])
         SalaireEstime = float(request.form['salaire'])
 
-        Pays_Germany = request.form['pays']
-        if (Pays_Germany == 'Germany'):
-            Pays_Germany = 1
-            Pays_Spain = 0
-            Pays_France = 0
-            pays = 'Germany'
+        Pays_Tunisie = request.form['pays']
+        if (Pays_Tunisie == 'Tunisie'):
+            Pays_Tunisie = 1
+            Pays_Algerie = 0
+            Pays_CIV = 0
+            pays = 'Tunisie'
 
-        elif (Pays_Germany == 'Spain'):
-            Pays_Germany = 0
-            Pays_Spain = 1
-            Pays_France = 0
-            pays = 'Spain'
+        elif (Pays_Tunisie == 'Algerie'):
+            Pays_Tunisie = 0
+            Pays_Algerie = 1
+            Pays_CIV = 0
+            pays = 'Algerie'
 
         else:
-            Pays_Germany = 0
-            Pays_Spain = 0
-            Pays_France = 1
-            pays = 'France'
+            Pays_Tunisie = 0
+            Pays_Algerie = 0
+            Pays_CIV = 1
+            pays = 'CIV'
 
         Genre_Homme = request.form['genre']
         if (Genre_Homme == 'Homme'):
@@ -399,22 +401,16 @@ def predictionCustomer(IdConseiller):
             Genre_Femme = 1
             genre = 'Femme'
 
-        if request.form.get('etat'):
-            MembreActif = 1
-        else:
-            MembreActif = 0
 
-        if request.form.get('carte'):
-            AvoirCarteCr = 1
-        else:
-            AvoirCarteCr = 0
 
-        input_data = [[CreditScore, Age, Tenure, Solde, NbreDeProduits, MembreActif, Pays_Germany, Genre_Femme]]
+        input_data = [[Grade, Age, Nb_fils_direct, Nb_fils, CE, CP ,NB_cheque,  Prime_animation ,Prime_parrainage,
+                       Nb_fois_actif, Date_naissance, Pays_Tunisie, Genre_Femme]]
         input_data = pd.DataFrame(input_data)
 
-        input_data.columns = ['CreditScore', 'Age', 'Tenure', 'Solde', 'NbreDeProduits', 'MembreActif', 'Pays_Germany',
-                              'Genre_Femme']
-        c = ['CreditScore', 'Age', 'Tenure', 'Solde', 'NbreDeProduits']
+        input_data.columns = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                              'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Date_naissance', 'Pays_Tunisie', 'Genre_Femme']
+        c = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                              'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Date_naissance', 'Pays_Tunisie', 'Genre_Femme']
         # sc = StandardScaler()
         input_data[c] = sca.transform(input_data[c])
 
@@ -432,30 +428,30 @@ def predictionCustomer(IdConseiller):
             quitte = 0
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        exist = cursor.execute('select * from conseillers_prediction where IdConseiller=%s', (IdConseiller,))
+        exist = cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
 
         if not exist:
-            cursor.execute('select * from conseillers where IdConseiller=%s', (IdConseiller,))
+            cursor.execute('select * from conseillers where ID_conseiller=%s', (ID_conseiller,))
             data = cursor.fetchone()
             print(data)
             Nom = data["Nom"]
 
-            sql = "INSERT INTO conseillers_prediction (IdConseiller, Nom, CreditScore, Pays, Genre,Age,Tenure,Solde,NbreDeProduits,AvoirCarteCr,MembreActif,SalaireEstime,Quitte,Probabilite_quitte) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
+            sql = "INSERT INTO conseillers (ID_conseiller, Nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Nb_fils, quitter, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             value = (
-                IdConseiller, Nom, CreditScore, pays, genre, Age, Tenure, Solde, NbreDeProduits, AvoirCarteCr, MembreActif,
-                SalaireEstime, quitte, prediction_proba,)
+                ID_conseiller, Nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage,
+                Date_naissance, Date_inscription, Nb_fois_actif, Nb_fils, quitte, prediction_proba,)
             cursor.execute(sql, value)
             mysql.connection.commit()
 
         else:
-            sql = "UPDATE conseillers_prediction set CreditScore=%s,Pays=%s,Genre=%s,Age=%s,Tenure=%s,Solde=%s,NbreDeProduits=%s,AvoirCarteCr=%s,MembreActif=%s,SalaireEstime=%s,Quitte=%s,Probabilite_quitte=%s where IdConseiller=%s"
+            sql = "UPDATE conseillers_prediction set Nb_fils_direct=%s,Pays=%s,Genre=%s,Grade=%s,Nb_fois_actif=%s,Nb_fils=%s,Quitte=%s,Probabilite_quitte=%s where ID_conseiller=%s"
             value = (
-                CreditScore, pays, genre, Age, Tenure, Solde, NbreDeProduits, AvoirCarteCr, MembreActif,
-                SalaireEstime, quitte, prediction_proba, IdConseiller)
+                Nb_fils_direct, pays, genre, Age, Grade, Solde, Nb_fois_actif, Nb_fils
+                , quitte, prediction_proba, ID_conseiller)
             cursor.execute(sql, value)
             mysql.connection.commit()
 
-        req=cursor.execute('select * from conseillers_prediction where IdConseiller=%s', (IdConseiller,))
+        req=cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
         d=cursor.fetchone()
 
         return render_template('prediction.html', prediction=prediction, prediction_proba=prediction_proba,d=d)
@@ -480,28 +476,27 @@ def prediction_much_customer():
 
         df = df.drop(columns=['Ligne'])
 
-        IdConseiller = df['IdConseiller']
+        ID_conseiller = df['ID_conseiller']
         Nom = df['Nom']
-        CreditScore = df['CreditScore']
+        Nb_fils_direct = df['Nb_fils_direct']
         Pays = df['Pays']
         Genre = df['Genre']
-        Age = df['Age']
-        Tenure = df['Tenure']
-        Solde = df['Solde']
-        NbreDeProduits = df['NbreDeProduits']
-        AvoirCarteCr = df['AvoirCarteCr']
-        MembreActif = df['MembreActif']
-        SalaireEstime = df['SalaireEstime']
+        Grade = df['Grade']
+        Nb_fois_actif = df['Nb_fois_actif']
+        Prime_animation = df['Prime_animation']
+        Prime_parrainage = df['Prime_parrainage']
+        Date_naissance = df['Date_naissance']
+        Date_inscription = df['Date_inscription']
 
-        df = df[['CreditScore', 'Pays', 'Genre', 'Age', 'Tenure', 'Solde', 'NbreDeProduits', 'MembreActif', 'Quitte']]
+        df = df[['Pays', 'Genre', 'CE', 'CP', 'Grade', 'Nb_fois_actif', 'Prime_animation', 'Prime_parrainage', 'Date_naissance', 'Nb_fils_direct', 'Date_inscription', 'Quitte']]
         df = pd.get_dummies(df)
-        df = df[['CreditScore', 'Age', 'Tenure', 'Solde', 'NbreDeProduits', 'MembreActif', 'Quitte',
+        df = df[['Nb_fois_actif','CE', 'CP', 'Date_naissance', 'Grade', 'Prime_animation', 'Prime_parrainage', 'Date_inscription', 'Nb_fils_direct', 'Quitte',
                  'Pays_Germany', 'Genre_Femme']]
         X = df.iloc[:, [0, 1, 2, 3, 4, 5, 7, 8]]
         y = df.iloc[:, 6].values
         y = pd.DataFrame(y)
 
-        c = ['CreditScore', 'Age', 'Tenure', 'Solde', 'NbreDeProduits']
+        c = ['Nb_fois_actif', 'Nb_fils_direct', 'Grade', 'CE', 'CP']
 
         X[c] = sca.transform(X[c])
 
@@ -517,67 +512,66 @@ def prediction_much_customer():
         for index, row in result.iterrows():
 
             cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-            exist = cursor.execute('select * from conseillers_prediction where IdConseiller=%s', (row.IdConseiller,))
+            exist = cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (row.ID_conseiller,))
 
             if not exist:
 
-                sql = "INSERT INTO conseillers_prediction (IdConseiller, Nom, CreditScore, Pays, Genre,Age,Tenure,Solde,NbreDeProduits,AvoirCarteCr,MembreActif,SalaireEstime,Quitte,Probabilite_quitte) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
+                sql = "INSERT INTO conseillers_prediction (Nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Nb_fils,Quitte,Probabilite_quitte) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
                 value = (
-                    row.IdConseiller, row.Nom, row.CreditScore, row.Pays, row.Genre, row.Age, row.Tenure, row.Solde,
+                    row.ID_conseiller, row.Nom, row.CreditScore, row.Pays, row.Genre, row.Age, row.Tenure, row.Solde,
                     row.NbreDeProduits, row.AvoirCarteCr, row.MembreActif,
                     row.SalaireEstime, row.Quitte, row.Probabilite_quitte,)
                 cursor.execute(sql, value)
                 mysql.connection.commit()
 
             else:
-                sql = "UPDATE conseillers_prediction set CreditScore=%s,Pays=%s,Genre=%s,Age=%s,Tenure=%s,Solde=%s,NbreDeProduits=%s,AvoirCarteCr=%s,MembreActif=%s,SalaireEstime=%s,Quitte=%s,Probabilite_quitte=%s where IdConseiller=%s"
+                sql = "UPDATE conseillers_prediction set Nb_fils_direct=%s,Pays=%s,Genre=%s,Grade=%s,Nb_fois_actif=%s,Nb_fils=%s,Quitte=%s,Probabilite_quitte=%s where ID_conseiller=%s"
                 value = (
-                    row.CreditScore, row.Pays, row.Genre, row.Age, row.Tenure, row.Solde,
-                    row.NbreDeProduits, row.AvoirCarteCr, row.MembreActif,
-                    row.SalaireEstime, row.Quitte, row.Probabilite_quitte, row.IdConseiller)
+                    row.Nb_fils_direct, row.Pays, row.Genre, row.Grade, row.Nb_fois_actif, row.Nb_fils,
+                    row.Quitte, row.Probabilite_quitte, row.ID_conseiller)
                 cursor.execute(sql, value)
                 mysql.connection.commit()
 
         return redirect(url_for('analyse'))
 
 
-@app.route('/get_customerPred/<IdConseiller>', methods=['GET', 'POST'])
-def get_customerPred(IdConseiller):
+@app.route('/get_customerPred/<ID_conseiller>', methods=['GET', 'POST'])
+def get_customerPred(ID_conseiller):
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM conseillers WHERE IdConseiller = %s', (IdConseiller,))
+    cursor.execute('SELECT * FROM conseillers WHERE ID_conseiller = %s', (ID_conseiller,))
     data = cursor.fetchone()
 
     return render_template('getCustomerPred.html', username=session['username'], data=data)
 
 
-@app.route('/predictionSingle/<IdConseiller>', methods=['GET', 'POST'])
-def predictionSingle(IdConseiller):
+@app.route('/predictionSingle/<ID_conseiller>', methods=['GET', 'POST'])
+def predictionSingle(ID_conseiller):
     if request.method == 'POST':
-        CreditScore = int(request.form['score'])
-        Age = int(request.form['age'])
-        Tenure = int(request.form['tenure'])
-        Solde = float(request.form['solde'])
-        NbreDeProduits = int(request.form['nb_prod'])
-        SalaireEstime = float(request.form['salaire'])
+        Nb_fils_direct = int(request.form['Nb_fils_direct'])
+        Grade = int(request.form['Grade'])
+        CE = float(request.form['CE'])
+        CP = float(request.form['CP'])
+        Nb_fils = int(request.form['Nb_fils'])
+        Nb_fois_actif = int(request.form['Nb_fois_actif'])
 
-        Pays_Germany = request.form['pays']
-        if (Pays_Germany == 'Germany'):
-            Pays_Germany = 1
-            Pays_Spain = 0
-            Pays_France = 0
-            pays = 'Germany'
+        Pays_Tunisie = request.form['pays']
+        if (Pays_Tunisie == 'Tunisie'):
+            Pays_Tunisie = 1
+            Pays_Algerie = 0
+            Pays_CIV = 0
+            pays = 'Tunisie'
 
-        elif (Pays_Germany == 'Spain'):
-            Pays_Germany = 0
-            Pays_Spain = 1
-            Pays_France = 0
-            pays = 'Spain'
+        elif (Pays_Tunisie == 'Algerie'):
+            Pays_Tunisie = 0
+            Pays_Algerie = 1
+            Pays_CIV = 0
+            pays = 'Algerie'
 
         else:
             Pays_Germany = 0
-            Pays_Spain = 0
-            Pays_France = 1
-            pays = 'France'
+            Pays_Algerie = 0
+            Pays_CIV = 1
+            pays = 'CIV'
 
         Genre_Homme = request.form['genre']
         if (Genre_Homme == 'Homme'):
@@ -599,12 +593,12 @@ def predictionSingle(IdConseiller):
         else:
             AvoirCarteCr = 0
 
-        input_data = [[CreditScore, Age, Tenure, Solde, NbreDeProduits, MembreActif, Pays_Germany, Genre_Femme]]
+        input_data = [[Nb_fils, Nb_fils_direct, Grade, CE, CP, Nb_fois_actif, Pays_Tunisie, Genre_Femme]]
         input_data = pd.DataFrame(input_data)
 
-        input_data.columns = ['CreditScore', 'Age', 'Tenure', 'Solde', 'NbreDeProduits', 'MembreActif', 'Pays_Germany',
+        input_data.columns = ['Nb_fils', 'Nb_fils_direct', 'Grade', 'CE', 'CP', 'Nb_fois_actif', 'Pays_Tunisie',
                               'Genre_Femme']
-        c = ['CreditScore', 'Age', 'Tenure', 'Solde', 'NbreDeProduits']
+        c = ['Nb_fils', 'Nb_fils_direct', 'Grade', 'CE', 'CP', 'Nb_fois_actif']
         # sc = StandardScaler()
         input_data[c] = sca.transform(input_data[c])
 
@@ -622,31 +616,29 @@ def predictionSingle(IdConseiller):
             quitte = 0
 
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        exist = cursor.execute('select * from conseillers_prediction where IdConseiller=%s', (IdConseiller,))
+        exist = cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
         d = cursor.fetchone()
 
         if not exist:
-            cursor.execute('select * from conseillers where IdConseiller=%s', (IdConseiller,))
+            cursor.execute('select * from conseillers where ID_conseiller=%s', (ID_conseiller,))
             data = cursor.fetchone()
             print(data)
             Nom = data["Nom"]
 
-            sql = "INSERT INTO conseillers_prediction (IdConseiller, Nom, CreditScore, Pays, Genre,Age,Tenure,Solde,NbreDeProduits,AvoirCarteCr,MembreActif,SalaireEstime,Quitte,Probabilite_quitte) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
+            sql = "INSERT INTO conseillers_prediction (ID_conseiller, Nom, Nb_fois_actif, Pays, Genre,Grade,Nb_fils_direct,Nb_fils,CE,CP,Date_naissance ,Date_inscription,Quitte,Probabilite_quitte) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
             value = (
-                IdConseiller, Nom, CreditScore, pays, genre, Age, Tenure, Solde, NbreDeProduits, AvoirCarteCr, MembreActif,
-                SalaireEstime, quitte, prediction_proba,)
+                ID_conseiller, Nom, Nb_fois_actif, Pays, Genre, Grade, Nb_fils_direct, Nb_fils, CE, CP, Date_naissance ,Date_inscription, quitte, prediction_proba,)
             cursor.execute(sql, value)
             mysql.connection.commit()
 
         else:
-            sql = "UPDATE conseillers_prediction set CreditScore=%s,Pays=%s,Genre=%s,Age=%s,Tenure=%s,Solde=%s,NbreDeProduits=%s,AvoirCarteCr=%s,MembreActif=%s,SalaireEstime=%s,Quitte=%s,Probabilite_quitte=%s where IdConseiller=%s"
+            sql = "UPDATE conseillers_prediction set Nb_fils_direct=%s,Pays=%s,Genre=%s,Grade=%s,Nb_fois_actif=%s,Nb_fils=%s,Quitte=%s,Probabilite_quitte=%s where ID_conseiller=%s"
             value = (
-                CreditScore, pays, genre, Age, Tenure, Solde, NbreDeProduits, AvoirCarteCr, MembreActif,
-                SalaireEstime, quitte, prediction_proba, IdConseiller)
+                Nb_fils_direct, pays, genre, Grade, Nb_fois_actif, Nb_fils, quitte, prediction_proba, ID_conseiller)
             cursor.execute(sql, value)
             mysql.connection.commit()
 
-    req = cursor.execute('select * from conseillers_prediction where IdConseiller=%s', (IdConseiller,))
+    req = cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
     d = cursor.fetchone()
 
     if prediction == 1:
@@ -670,7 +662,7 @@ def prediction2():
 #     c = {}
 #
 #     for i in conseillers:
-#         c = {'IdConseiller': i['IdConseiller'], 'Nom': i['Nom'], 'CreditScore': i['CreditScore'], 'Pays': i['Pays'],
+#         c = {'ID_conseiller': i['ID_conseiller'], 'Nom': i['Nom'], 'CreditScore': i['CreditScore'], 'Pays': i['Pays'],
 #              'Genre': i['Genre'], 'Age': i['Age'], 'Tenure': i['Tenure'], 'Solde': i['Solde'],
 #              'NbreDeProduits': i['NbreDeProduits'], 'AvoirCarteCr': i['AvoirCarteCr'],
 #              'MembreActif': i['MembreActif'], 'SalaireEstime': i['SalaireEstime'], 'Quitte': i['Quitte']}
