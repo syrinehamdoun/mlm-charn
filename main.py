@@ -85,10 +85,10 @@ def add_customer():
     if request.method == 'POST':
         # Create variables for easy access
         id = request.form['id']
-        nom = request.form['nom']
+        Nom = request.form['nom']
         Nb_fils_direct = request.form['Nb_fils_direct']
-        pays = request.form.get('pays')
-        genre = request.form['genre']
+        Pays = request.form.get('pays')
+        Genre = request.form['genre']
         Nb_fils = request.form['Nb_fils']
         Grade = request.form.get('Grade')
         NB_cheque = request.form['NB_cheque']
@@ -97,8 +97,12 @@ def add_customer():
         Date_naissance = request.form.get('Date_naissance')
         Date_inscription = request.form.get('Date_inscription')
         Nb_fois_actif = request.form.get('Nb_fois_actif')
-        quitter = request.form.get('etat')
+        Quitter = request.form.get('etat')
 
+        if Quitter:
+            Quitter = 1
+        else:
+            Quitter = 0
 
 
         # Check if account exists using MySQL
@@ -111,9 +115,9 @@ def add_customer():
             a = 1
 
         else:
-            # Account doesnt exists and the form data is valid, now insert new account into accounts table
-            cursor.execute('INSERT INTO conseillers VALUES (NULL, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                           (id, nom, Nb_fils_direct, pays, genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription,Nb_fois_actif, quitter))
+            requete = "INSERT INTO conseillers (ID_conseiller, Nom, Nb_fils_direct, Pays, Genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Quitter) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            valeurs = (id, Nom, Nb_fils_direct, Pays, Genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Quitter)
+            cursor.execute(requete, valeurs)
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             a = 2
@@ -169,13 +173,16 @@ def update_customer(ID_conseiller):
 @app.route('/delete_customer/<string:ID_conseiller>', methods=['POST', 'GET'])
 def delete_customer(ID_conseiller):
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('DELETE FROM  conseillers WHERE ID_conseiller = {0}'.format(ID_conseiller))
-    mysql.connection.commit()
+    requete = 'DELETE FROM conseillers WHERE ID_conseiller = %s'
+    valeurs = (str(ID_conseiller),)
+    cursor.execute(requete, valeurs)
 
-    exist=cursor.execute('Select ID_conseiller from conseillers_prediction WHERE ID_conseiller = {0}'.format(ID_conseiller))
+
+    exist = 'SELECT ID_conseiller FROM conseillers_prediction WHERE ID_conseiller = %s'
+    cursor.execute(requete, valeurs)
     if exist:
-        cursor.execute('DELETE FROM  conseillers_prediction WHERE ID_conseiller = {0}'.format(ID_conseiller))
-        mysql.connection.commit()
+        requete = 'DELETE FROM conseillers_prediction WHERE ID_conseiller = %s'
+        cursor.execute(requete, valeurs)
 
 
 
@@ -194,7 +201,7 @@ def delete_customer_analyse(ID_conseiller):
 @app.route('/historique', methods=['POST', 'GET'])
 def historique():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM conseillers  where ligne>9970')
+    cursor.execute('SELECT * FROM conseillers limit 100')
     conseillers  = cursor.fetchall()
 
     return render_template('historique.html', username=session['username'], conseillers=conseillers)

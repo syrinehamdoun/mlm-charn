@@ -14,8 +14,8 @@ import joblib
 from sqlalchemy import create_engine
 
 # Establish a MySQL database connection
-# db_connect = create_engine('mysql+mysqlconnector://root@localhost/banque')
-db_connect = create_engine('mysql+mysqlconnector://root:pY1jcn5XdnFH1mFvNCtF@containers-us-west-188.railway.app:6949/banque')
+db_connect = create_engine('mysql+mysqlconnector://root@localhost/banque')
+# db_connect = create_engine('mysql+mysqlconnector://root:pY1jcn5XdnFH1mFvNCtF@containers-us-west-188.railway.app:6949/banque')
 
 df = pd.read_sql('select * from client', con=db_connect)
 
