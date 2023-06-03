@@ -51,60 +51,63 @@
             </div>
 
             <div class="clearfix"></div>
+<div class="row custom-background">
+  <div class="col-md-12 col-sm-12">
+    <div class="x_panel">
+      <div class="x_title">
+        <h2><small>Page d'accueil</small></h2>
+        <div class="nav navbar-right panel_toolbox">
+        </div>
+        <div class="clearfix"></div>
+      </div>
+           <div class="container">
+        <h1 class="text-center">Bienvenue
+                 <img
+                    src="{{ url_for('static', filename='images/mm.png') }}" width="3%">  </a></h1>
 
-            <div class="row">
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2><small>Page d'accueil</small></h2>
-                    <div class="nav navbar-right panel_toolbox">
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="row">
-                     <section id="fh5co-projects">
-                         <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
-						    <a href="{{ url_for('historique') }}" class="fh5co-project-item image-popup">
-							<img src="{{ url_for('static', filename='css-index/images/1.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: auto;">
-							<div class="fh5co-text">
-								<h2>Gestion des conseillers</h2>
-							</div>
-						    </a>
-					    </div>
-				    	<div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
-						    <a href="{{ url_for('dashboard') }}" class="fh5co-project-item image-popup">
-							<img src="{{ url_for('static', filename='css-index/images/4.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: auto;">
-							<div class="fh5co-text">
-								<h2>Tableau de bord</h2>
-							</div>
-						    </a>
-				    	</div>
+        <p class="text-center">Bienvenue sur notre plateforme de Dashboarding, Gestion des Conseillers et Prédiction des Conseillers, où vous pouvez utiliser des outils avancés pour obtenir des prédictions précises et optimiser votre prise de décision.</p>
+      </div>
+      <div class="row">
+        <section id="fh5co-projects">
 
-
-
-					    <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
-						    <a href="{{ url_for('prediction') }}" class="fh5co-project-item image-popup">
-							<img src="{{ url_for('static', filename='css-index/images/6.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: auto;">
-							<div class="fh5co-text">
-								<h2>Prédiction </h2>
-							</div>
-						    </a>
-					    </div>
-
-		          </section>
-
-
+          <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+            <a href="{{ url_for('historique') }}" class="fh5co-project-item image-popup">
+              <img src="{{ url_for('static', filename='css-index/images/cons.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: 400px;">
+              <div class="fh5co-text">
+                <h2>Gestion des conseillers</h2>
               </div>
-
-                </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+            <a href="{{ url_for('dashboard') }}" class="fh5co-project-item image-popup">
+              <img src="{{ url_for('static', filename='css-index/images/4.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: 400px;">
+              <div class="fh5co-text">
+                <h2>Tableau de bord</h2>
               </div>
+            </a>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+            <a href="{{ url_for('prediction') }}" class="fh5co-project-item image-popup">
+              <img src="{{ url_for('static', filename='css-index/images/pred.jpg') }}" alt="Image" style="display: block; max-width: 100%;height: 400px;">
+              <div class="fh5co-text">
+                <h2>Prédiction</h2>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
 
 
 
+    </div>
+  </div>
+</div>
 
 
+    </div>
+  </div>
+</div>
 
-            </div>
                 </div>
               </div>
             </div>

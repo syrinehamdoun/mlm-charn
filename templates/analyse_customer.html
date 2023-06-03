@@ -185,7 +185,7 @@ div.upload input[type="file"] {
                     <table id="datatable-buttons"  class="table table-striped table-bordered" style="width:100%">
                       <thead>
                         <tr>
-                          <th>N° Client</th>
+                          <th>N° Conseiller</th>
                           <th>Nom</th>
                           <th>Prediction Attrition</th>
                             <th>Probabilité d'attrition</th>
@@ -195,18 +195,19 @@ div.upload input[type="file"] {
 
 
                    <tbody>
-                   {% for row in client %}
+                   {% for row in conseillers %}
 
 
                    <tr>
 
-                       <td>{{row.IdClient}}</td>
+                       <td>{{row.ID_conseiller}}</td>
                        <td>{{row.Nom}}</td>
-                    {% if row.Quitte==1 %}
-                       <td><span class="badge badge-danger">Quitter</span></td>
-                       {% else %}
-                       <td><span class="badge badge-success">Rester</span></td>
-                         {% endif %}
+                 {% if row.Probabilite_quitte>=50 %}
+                <td ><span class="badge badge-danger">Quitter</span></td>
+                            {% else %}
+
+                <td ><span class="badge badge-success">Rester</span></td>
+                    {% endif %}
 
 
                        {% if row.Probabilite_quitte>=50 %}

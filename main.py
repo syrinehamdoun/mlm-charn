@@ -204,7 +204,7 @@ def historique():
 @app.route('/analyse', methods=['POST', 'GET'])
 def analyse():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM conseillers_prediction where Ligne>9990')
+    cursor.execute('SELECT * FROM conseillers_prediction')
     conseillers = cursor.fetchall()
 
     return render_template('analyse_customer.html', username=session['username'], conseillers=conseillers)
