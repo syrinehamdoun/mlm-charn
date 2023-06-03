@@ -141,9 +141,7 @@ def update_customer(ID_conseiller):
     msg = ''
     if request.method == 'POST':
         # Create variables for easy access
-        id = request.form['id']
         nom = request.form['nom']
-        Nb_fils_direct = request.form['Nb_fils_direct']
         pays = request.form.get('pays')
         genre = request.form['genre']
         Nb_fils = request.form['Nb_fils']
@@ -154,15 +152,14 @@ def update_customer(ID_conseiller):
         Date_naissance = request.form.get('Date_naissance')
         Date_inscription = request.form.get('Date_inscription')
         Nb_fois_actif = request.form.get('Nb_fois_actif')
-        quitter = 1
 
 
 
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        cursor.execute('UPDATE conseillers set Nom=%s,Nb_fils_direct=%s,Pays=%s,Genre=%s,Grade=%s,NB_cheque=%s,'
-                       'Prime_animation=%s,Prime_parrainage=%s,Date_naissance=%s,Date_inscription=%s,Nb_fois_actif=%s,Nb_fils=%s,Quitte=%s where ID_conseiller=%s',
-                       (nom, Nb_fils_direct, pays, genre, Grade, NB_cheque,Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif,Nb_fils, quitter, id))
+        cursor.execute('UPDATE conseillers set Nom=%s, Pays=%s,Genre=%s,Grade=%s,NB_cheque=%s,'
+                       'Prime_animation=%s,Prime_parrainage=%s,Date_naissance=%s,Date_inscription=%s,Nb_fois_actif=%s,Nb_fils=%s where ID_conseiller=%s',
+                       (nom, pays, genre, Grade, NB_cheque,Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif,Nb_fils, ID_conseiller))
         mysql.connection.commit()
         msg = 'You have successfully updated!'
         account = cursor.fetchone()

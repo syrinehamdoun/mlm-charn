@@ -58,7 +58,7 @@
                 </div>
                 <div class="x_content">
                   <br />
-                  <form action="/update_customer/{{data.IdClient}}" method="post" autocomplete="off" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                  <form action="/update_customer/{{data.ID_conseiller}}" method="post" autocomplete="off" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                     <div class="item form-group">
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="nom">Nom<span class="required">*</span>
@@ -85,8 +85,8 @@
                       <label class="col-form-label col-md-3 col-sm-3 label-align">Genre</label>
                       <div class="col-md-6 col-sm-6 ">
                         <div id="genre" class="btn-group" data-toggle="buttons">
-                            <input  {% if data.Genre=="Homme" %} checked="checked"{% endif %} type="radio" name="genre" value="Homme" class="flat" required readonly="true"> &nbsp; Homme &nbsp;
-                            <input {% if data.Genre=="Femme" %} checked="checked"{% endif %} type="radio" name="genre" value="Femme" class="flat" readonly="true"> Femme
+                            <input  {% if data.Genre=="M" %} checked="checked"{% endif %} type="radio" name="genre" value="Homme" class="flat" required readonly="true"> &nbsp; Homme &nbsp;
+                            <input {% if data.Genre=="F" %} checked="checked"{% endif %} type="radio" name="genre" value="Femme" class="flat" readonly="true"> Femme
                         </div>
                       </div>
                     </div>
