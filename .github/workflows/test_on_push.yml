@@ -1,9 +1,9 @@
 name: update-dm
 
-on:
-  push:
-    branches:
-      - master
+#on:
+#  push:
+#    branches:
+#      - master
 
 jobs:
   build:
