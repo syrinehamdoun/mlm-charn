@@ -12,3 +12,4 @@ imblearn==0.0
 SQLAlchemy==2.0.15
 lightgbm==3.3.5
 mysql-connector-python==8.0.33
+plotly-resampler==0.8.0

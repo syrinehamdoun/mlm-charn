@@ -369,12 +369,19 @@ sca = joblib.load('scale.pkl')
 @app.route('/prediction/<ID_conseiller>', methods=['GET', 'POST'])
 def predictionCustomer(ID_conseiller):
     if request.method == 'POST':
-        CreditScore = int(request.form['score'])
         Age = int(request.form['age'])
         Grade = int(request.form['Grade'])
         Solde = float(request.form['solde'])
-        NbreDeProduits = int(request.form['nb_prod'])
-        SalaireEstime = float(request.form['salaire'])
+        Nb_fils = int(request.form['Nb_fils'])
+        NB_cheque = int(request.form['NB_cheque'])
+        Prime_animation = int(request.form['Prime_animation'])
+        Prime_parrainage = int(request.form['Prime_parrainage'])
+        Nb_fois_actif = int(request.form['Nb_fois_actif'])
+        Prime_parrainage = int(request.form['Prime_parrainage'])
+        Nb_fils = int(request.form['Nb_fils'])
+        CE = float(request.form['CE'])
+        CP = float(request.form['CP'])
+        Nb_fils_direct = float(request.form['Nb_fils_direct'])
 
         Pays_Tunisie = request.form['pays']
         if (Pays_Tunisie == 'Tunisie'):
@@ -408,13 +415,13 @@ def predictionCustomer(ID_conseiller):
 
 
         input_data = [[Grade, Age, Nb_fils_direct, Nb_fils, CE, CP ,NB_cheque,  Prime_animation ,Prime_parrainage,
-                       Nb_fois_actif, Date_naissance, Pays_Tunisie, Genre_Femme]]
+                       Nb_fois_actif, Pays_Tunisie, Genre_Femme]]
         input_data = pd.DataFrame(input_data)
 
         input_data.columns = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
-                              'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Date_naissance', 'Pays_Tunisie', 'Genre_Femme']
+                              'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
         c = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
-                              'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Date_naissance', 'Pays_Tunisie', 'Genre_Femme']
+                              'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
         # sc = StandardScaler()
         input_data[c] = sca.transform(input_data[c])
 
@@ -440,10 +447,10 @@ def predictionCustomer(ID_conseiller):
             print(data)
             Nom = data["Nom"]
 
-            sql = "INSERT INTO conseillers (ID_conseiller, Nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Nb_fils, quitter, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            sql = "INSERT INTO conseillers (ID_conseiller, Nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage,  Nb_fois_actif, Nb_fils, quitter, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             value = (
                 ID_conseiller, Nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage,
-                Date_naissance, Date_inscription, Nb_fois_actif, Nb_fils, quitte, prediction_proba,)
+                Nb_fois_actif, Nb_fils, quitte, prediction_proba,)
             cursor.execute(sql, value)
             mysql.connection.commit()
 
@@ -655,26 +662,6 @@ def predictionSingle(ID_conseiller):
 def prediction2():
     return render_template('ResultatPred.html', username=session['username'])
 
-
-# @app.route('/h')
-# def historique1():
-#     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-#     cursor.execute('SELECT * FROM conseillers   ')
-#     conseillers = cursor.fetchall()
-#
-#     data = []
-#     c = {}
-#
-#     for i in conseillers:
-#         c = {'ID_conseiller': i['ID_conseiller'], 'Nom': i['Nom'], 'CreditScore': i['CreditScore'], 'Pays': i['Pays'],
-#              'Genre': i['Genre'], 'Age': i['Age'], 'Tenure': i['Tenure'], 'Solde': i['Solde'],
-#              'NbreDeProduits': i['NbreDeProduits'], 'AvoirCarteCr': i['AvoirCarteCr'],
-#              'MembreActif': i['MembreActif'], 'SalaireEstime': i['SalaireEstime'], 'Quitte': i['Quitte']}
-#
-#         data.append(c)
-#         c = {}
-#
-#     return jsonify(data)
 
 
 if __name__ == '__main__':
