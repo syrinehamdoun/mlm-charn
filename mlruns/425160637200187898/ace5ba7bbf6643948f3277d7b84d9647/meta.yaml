@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/21655/PycharmProjects/PFE/mlruns/425160637200187898/ace5ba7bbf6643948f3277d7b84d9647/artifacts
+end_time: 1686512996463
+entry_point_name: ''
+experiment_id: '425160637200187898'
+lifecycle_stage: active
+run_id: ace5ba7bbf6643948f3277d7b84d9647
+run_name: Gradient Boosting Classifier
+run_uuid: ace5ba7bbf6643948f3277d7b84d9647
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1686512995662
+status: 3
+tags: []
+user_id: '21655'

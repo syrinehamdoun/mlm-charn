@@ -99,10 +99,6 @@ def add_customer():
         Nb_fois_actif = request.form.get('Nb_fois_actif')
         Quitter = request.form.get('etat')
 
-        if Quitter:
-            Quitter = 1
-        else:
-            Quitter = 0
 
 
         # Check if account exists using MySQL
@@ -115,9 +111,9 @@ def add_customer():
             a = 1
 
         else:
-            requete = "INSERT INTO conseillers (ID_conseiller, Nom, Nb_fils_direct, Pays, Genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Quitter) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            valeurs = (id, Nom, Nb_fils_direct, Pays, Genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Quitter)
-            cursor.execute(requete, valeurs)
+            # Account doesnt exists and the form data is valid, now insert new account into accounts table
+            cursor.execute('INSERT INTO conseillers VALUES (NULL, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
+                           (id, nom, Nb_fils_direct, pays, genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription,Nb_fois_actif, quitter))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             a = 2
@@ -198,7 +194,7 @@ def delete_customer_analyse(ID_conseiller):
 @app.route('/historique', methods=['POST', 'GET'])
 def historique():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM conseillers limit 100')
+    cursor.execute('SELECT * FROM conseillers')
     conseillers  = cursor.fetchall()
 
     return render_template('historique.html', username=session['username'], conseillers=conseillers)

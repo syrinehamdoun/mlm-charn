@@ -1,0 +1,1238 @@
+2023-06-11 15:34:27,397:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 15:34:27,397:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 15:34:27,397:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 15:34:27,397:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 15:34:28,272:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 16:23:11,021:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:23:11,021:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:23:11,021:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:23:11,021:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:23:11,595:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 16:23:12,632:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:19: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 16:23:20,541:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:23:20,541:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:23:20,541:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:23:20,541:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:23:21,054:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 16:23:21,723:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:19: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 16:25:22,488:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:25:22,488:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:25:22,488:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:25:22,488:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 16:25:23,005:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 16:25:23,686:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:19: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 20:33:54,579:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:33:54,580:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:33:54,580:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:33:54,580:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:34:01,800:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 20:34:02,680:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:14: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 20:38:29,453:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:38:29,453:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:38:29,453:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:38:29,453:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:38:30,018:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 20:38:30,652:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:14: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 20:40:16,344:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:40:16,345:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:40:16,345:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:40:16,345:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:40:16,883:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 20:40:17,654:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:14: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 20:44:19,177:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:44:19,178:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:44:19,178:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:44:19,178:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:44:19,804:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 20:44:20,396:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:14: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 20:45:38,939:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:45:38,939:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:45:38,939:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:45:38,939:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:45:39,581:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 20:45:40,171:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:14: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 20:49:23,195:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:49:23,195:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:49:23,195:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:49:23,195:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:49:23,764:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 20:49:25,131:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:14: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 20:49:25,905:INFO:PyCaret ClassificationExperiment
+2023-06-11 20:49:25,905:INFO:Logging name: Churn
+2023-06-11 20:49:25,905:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2023-06-11 20:49:25,905:INFO:version 3.0.2
+2023-06-11 20:49:25,905:INFO:Initializing setup()
+2023-06-11 20:49:25,905:INFO:self.USI: 2ab7
+2023-06-11 20:49:25,905:INFO:self._variable_keys: {'X_test', 'fix_imbalance', 'y_train', 'target_param', 'X', 'gpu_param', '_available_plots', 'exp_id', 'seed', 'X_train', 'data', 'y_test', 'exp_name_log', 'memory', 'fold_shuffle_param', 'fold_generator', 'fold_groups_param', 'y', 'log_plots_param', 'n_jobs_param', 'is_multiclass', 'idx', 'pipeline', 'html_param', 'logging_param', '_ml_usecase', 'gpu_n_jobs_param', 'USI'}
+2023-06-11 20:49:25,905:INFO:Checking environment
+2023-06-11 20:49:25,905:INFO:python_version: 3.10.7
+2023-06-11 20:49:25,906:INFO:python_build: ('tags/v3.10.7:6cc6b13', 'Sep  5 2022 14:08:36')
+2023-06-11 20:49:25,906:INFO:machine: AMD64
+2023-06-11 20:49:25,929:INFO:platform: Windows-10-10.0.22621-SP0
+2023-06-11 20:49:25,932:INFO:Memory: svmem(total=12728344576, available=1397563392, percent=89.0, used=11330781184, free=1397563392)
+2023-06-11 20:49:25,932:INFO:Physical Core: 6
+2023-06-11 20:49:25,932:INFO:Logical Core: 12
+2023-06-11 20:49:25,932:INFO:Checking libraries
+2023-06-11 20:49:25,932:INFO:System:
+2023-06-11 20:49:25,932:INFO:    python: 3.10.7 (tags/v3.10.7:6cc6b13, Sep  5 2022, 14:08:36) [MSC v.1933 64 bit (AMD64)]
+2023-06-11 20:49:25,932:INFO:executable: C:\Users\21655\PycharmProjects\PFE\venv\Scripts\python.exe
+2023-06-11 20:49:25,932:INFO:   machine: Windows-10-10.0.22621-SP0
+2023-06-11 20:49:25,932:INFO:PyCaret required dependencies:
+2023-06-11 20:49:25,932:INFO:                 pip: 22.3.1
+2023-06-11 20:49:25,933:INFO:          setuptools: 65.5.1
+2023-06-11 20:49:25,933:INFO:             pycaret: 3.0.2
+2023-06-11 20:49:25,933:INFO:             IPython: 8.14.0
+2023-06-11 20:49:25,933:INFO:          ipywidgets: 8.0.6
+2023-06-11 20:49:25,933:INFO:                tqdm: 4.65.0
+2023-06-11 20:49:25,933:INFO:               numpy: 1.24.3
+2023-06-11 20:49:25,933:INFO:              pandas: 2.0.1
+2023-06-11 20:49:25,933:INFO:              jinja2: 3.1.2
+2023-06-11 20:49:25,933:INFO:               scipy: 1.10.1
+2023-06-11 20:49:25,933:INFO:              joblib: 1.2.0
+2023-06-11 20:49:25,933:INFO:             sklearn: 1.2.2
+2023-06-11 20:49:25,933:INFO:                pyod: 1.0.9
+2023-06-11 20:49:25,933:INFO:            imblearn: 0.10.1
+2023-06-11 20:49:25,933:INFO:   category_encoders: 2.6.1
+2023-06-11 20:49:25,933:INFO:            lightgbm: 3.3.5
+2023-06-11 20:49:25,933:INFO:               numba: 0.57.0
+2023-06-11 20:49:25,933:INFO:            requests: 2.29.0
+2023-06-11 20:49:25,933:INFO:          matplotlib: 3.7.1
+2023-06-11 20:49:25,933:INFO:          scikitplot: 0.3.7
+2023-06-11 20:49:25,933:INFO:         yellowbrick: 1.5
+2023-06-11 20:49:25,933:INFO:              plotly: 5.14.1
+2023-06-11 20:49:25,933:INFO:             kaleido: 0.2.1
+2023-06-11 20:49:25,934:INFO:         statsmodels: 0.14.0
+2023-06-11 20:49:25,934:INFO:              sktime: 0.17.0
+2023-06-11 20:49:25,934:INFO:               tbats: 1.1.3
+2023-06-11 20:49:25,934:INFO:            pmdarima: 2.0.3
+2023-06-11 20:49:25,934:INFO:              psutil: 5.9.5
+2023-06-11 20:49:25,934:INFO:PyCaret optional dependencies:
+2023-06-11 20:49:25,948:INFO:                shap: Not installed
+2023-06-11 20:49:25,948:INFO:           interpret: Not installed
+2023-06-11 20:49:25,948:INFO:                umap: Not installed
+2023-06-11 20:49:25,948:INFO:    pandas_profiling: Not installed
+2023-06-11 20:49:25,948:INFO:  explainerdashboard: Not installed
+2023-06-11 20:49:25,948:INFO:             autoviz: Not installed
+2023-06-11 20:49:25,948:INFO:           fairlearn: Not installed
+2023-06-11 20:49:25,948:INFO:             xgboost: Not installed
+2023-06-11 20:49:25,948:INFO:            catboost: 1.2
+2023-06-11 20:49:25,948:INFO:              kmodes: Not installed
+2023-06-11 20:49:25,948:INFO:             mlxtend: Not installed
+2023-06-11 20:49:25,948:INFO:       statsforecast: Not installed
+2023-06-11 20:49:25,948:INFO:        tune_sklearn: Not installed
+2023-06-11 20:49:25,948:INFO:                 ray: Not installed
+2023-06-11 20:49:25,948:INFO:            hyperopt: Not installed
+2023-06-11 20:49:25,948:INFO:              optuna: Not installed
+2023-06-11 20:49:25,948:INFO:               skopt: Not installed
+2023-06-11 20:49:25,948:INFO:              mlflow: 2.4.1
+2023-06-11 20:49:25,949:INFO:              gradio: Not installed
+2023-06-11 20:49:25,949:INFO:             fastapi: Not installed
+2023-06-11 20:49:25,949:INFO:             uvicorn: Not installed
+2023-06-11 20:49:25,949:INFO:              m2cgen: Not installed
+2023-06-11 20:49:25,949:INFO:           evidently: Not installed
+2023-06-11 20:49:25,949:INFO:               fugue: Not installed
+2023-06-11 20:49:25,949:INFO:           streamlit: 1.22.0
+2023-06-11 20:49:25,949:INFO:             prophet: Not installed
+2023-06-11 20:49:25,949:INFO:None
+2023-06-11 20:49:25,949:INFO:Set up data.
+2023-06-11 20:49:25,960:INFO:Set up train/test split.
+2023-06-11 20:49:25,974:INFO:Set up index.
+2023-06-11 20:49:25,975:INFO:Set up folding strategy.
+2023-06-11 20:49:25,975:INFO:Assigning column types.
+2023-06-11 20:49:25,990:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2023-06-11 20:49:26,046:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-06-11 20:49:26,050:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-06-11 20:49:26,095:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:49:26,131:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:49:26,206:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-06-11 20:49:26,207:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-06-11 20:49:26,235:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:49:26,235:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:49:26,236:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2023-06-11 20:49:26,283:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-06-11 20:49:26,321:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:49:26,321:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:49:26,367:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-06-11 20:49:26,404:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:49:26,405:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:49:26,406:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2023-06-11 20:49:26,494:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:49:26,495:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:49:26,575:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:49:26,575:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:49:26,580:INFO:Preparing preprocessing pipeline...
+2023-06-11 20:49:26,583:INFO:Set up simple imputation.
+2023-06-11 20:49:26,584:INFO:Set up removing outliers.
+2023-06-11 20:49:26,584:INFO:Set up imbalanced handling.
+2023-06-11 20:49:26,584:INFO:Set up feature normalization.
+2023-06-11 20:49:26,789:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:27,662:INFO:Finished creating preprocessing pipeline.
+2023-06-11 20:49:27,675:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\21655\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['ligne', 'Nb_fils_direct',
+                                             'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                                             'Prime_animation',
+                                             'Prime_parrainage',
+                                             'Nb_fois_actif', 'Anciennete'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_em...
+                                                               n_jobs=1,
+                                                               random_state=7188,
+                                                               threshold=0.05))),
+                ('balance',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=FixImbalancer(estimator=SMOTE(k_neighbors=5,
+                                                                              n_jobs=None,
+                                                                              random_state=None,
+                                                                              sampling_strategy='auto')))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False)
+2023-06-11 20:49:27,675:INFO:Creating final display dataframe.
+2023-06-11 20:49:27,998:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:29,017:INFO:Setup _display_container:                     Description            Value
+0                    Session id             7188
+1                        Target          quitter
+2                   Target type           Binary
+3           Original data shape      (10000, 24)
+4        Transformed data shape      (12768, 24)
+5   Transformed train set shape       (9768, 24)
+6    Transformed test set shape       (3000, 24)
+7              Numeric features               10
+8                    Preprocess             True
+9               Imputation type           simple
+10           Numeric imputation             mean
+11       Categorical imputation             mode
+12              Remove outliers             True
+13           Outliers threshold             0.05
+14                Fix imbalance             True
+15         Fix imbalance method            SMOTE
+16                    Normalize             True
+17             Normalize method           zscore
+18               Fold Generator  StratifiedKFold
+19                  Fold Number               10
+20                     CPU Jobs               -1
+21                      Use GPU            False
+22               Log Experiment     MlflowLogger
+23              Experiment Name            Churn
+24                          USI             2ab7
+2023-06-11 20:49:29,131:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:49:29,131:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:49:29,225:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:49:29,226:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:49:29,227:INFO:Logging experiment in loggers
+2023-06-11 20:49:29,690:INFO:SubProcess save_model() called ==================================
+2023-06-11 20:49:29,706:INFO:Initializing save_model()
+2023-06-11 20:49:29,706:INFO:save_model(model=Pipeline(memory=FastMemory(location=C:\Users\21655\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['ligne', 'Nb_fils_direct',
+                                             'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                                             'Prime_animation',
+                                             'Prime_parrainage',
+                                             'Nb_fois_actif', 'Anciennete'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_em...
+                                                               n_jobs=1,
+                                                               random_state=7188,
+                                                               threshold=0.05))),
+                ('balance',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=FixImbalancer(estimator=SMOTE(k_neighbors=5,
+                                                                              n_jobs=None,
+                                                                              random_state=None,
+                                                                              sampling_strategy='auto')))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False), model_name=C:\Users\21655\AppData\Local\Temp\tmpr7lafdsr\Transformation Pipeline, prep_pipe_=Pipeline(memory=FastMemory(location=C:\Users\21655\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['ligne', 'Nb_fils_direct',
+                                             'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                                             'Prime_animation',
+                                             'Prime_parrainage',
+                                             'Nb_fois_actif', 'Anciennete'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_em...
+                                                               n_jobs=1,
+                                                               random_state=7188,
+                                                               threshold=0.05))),
+                ('balance',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=FixImbalancer(estimator=SMOTE(k_neighbors=5,
+                                                                              n_jobs=None,
+                                                                              random_state=None,
+                                                                              sampling_strategy='auto')))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False), verbose=False, use_case=MLUsecase.CLASSIFICATION, kwargs={})
+2023-06-11 20:49:29,706:INFO:Adding model into prep_pipe
+2023-06-11 20:49:29,706:WARNING:Only Model saved as it was a pipeline.
+2023-06-11 20:49:29,752:INFO:C:\Users\21655\AppData\Local\Temp\tmpr7lafdsr\Transformation Pipeline.pkl saved in current working directory
+2023-06-11 20:49:29,764:INFO:Pipeline(memory=FastMemory(location=C:\Users\21655\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['ligne', 'Nb_fils_direct',
+                                             'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                                             'Prime_animation',
+                                             'Prime_parrainage',
+                                             'Nb_fois_actif', 'Anciennete'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_em...
+                                                               n_jobs=1,
+                                                               random_state=7188,
+                                                               threshold=0.05))),
+                ('balance',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=FixImbalancer(estimator=SMOTE(k_neighbors=5,
+                                                                              n_jobs=None,
+                                                                              random_state=None,
+                                                                              sampling_strategy='auto')))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False)
+2023-06-11 20:49:29,765:INFO:save_model() successfully completed......................................
+2023-06-11 20:49:29,844:INFO:SubProcess save_model() end ==================================
+2023-06-11 20:49:29,859:INFO:setup() successfully completed in 3.93s...............
+2023-06-11 20:49:29,859:INFO:Initializing create_model()
+2023-06-11 20:49:29,859:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x00000235D09D6800>, estimator=gbc, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=True, system=True, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-06-11 20:49:29,859:INFO:Checking exceptions
+2023-06-11 20:49:29,861:INFO:Importing libraries
+2023-06-11 20:49:29,861:INFO:Copying training dataset
+2023-06-11 20:49:29,872:INFO:Defining folds
+2023-06-11 20:49:29,873:INFO:Declaring metric variables
+2023-06-11 20:49:29,873:INFO:Importing untrained model
+2023-06-11 20:49:29,873:INFO:Gradient Boosting Classifier Imported successfully
+2023-06-11 20:49:29,873:INFO:Starting cross validation
+2023-06-11 20:49:29,882:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-06-11 20:49:37,816:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,818:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,819:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,837:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,839:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,842:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,858:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,862:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,864:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:37,929:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:49:51,686:INFO:Calculating mean and std
+2023-06-11 20:49:51,688:INFO:Creating metrics dataframe
+2023-06-11 20:49:51,690:INFO:Finalizing model
+2023-06-11 20:49:55,652:INFO:Creating Dashboard logs
+2023-06-11 20:49:55,653:INFO:Model: Gradient Boosting Classifier
+2023-06-11 20:49:55,684:INFO:Logged params: {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_loss', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_iter_no_change': None, 'random_state': 7188, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2023-06-11 20:49:55,774:INFO:Initializing predict_model()
+2023-06-11 20:49:55,774:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x00000235D09D6800>, estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x00000235E0ACDB40>)
+2023-06-11 20:49:55,774:INFO:Checking exceptions
+2023-06-11 20:49:55,774:INFO:Preloading libraries
+2023-06-11 20:49:56,033:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\_distutils_hack\__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn("Setuptools is replacing distutils.")
+
+2023-06-11 20:49:56,540:INFO:Uploading results into container
+2023-06-11 20:49:56,540:INFO:Uploading model into container now
+2023-06-11 20:49:56,548:INFO:_master_model_container: 1
+2023-06-11 20:49:56,549:INFO:_display_container: 2
+2023-06-11 20:49:56,549:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-06-11 20:49:56,549:INFO:create_model() successfully completed......................................
+2023-06-11 20:49:56,626:INFO:Initializing tune_model()
+2023-06-11 20:49:56,626:INFO:tune_model(estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), fold=None, round=4, n_iter=10, custom_grid=None, optimize=Accuracy, custom_scorer=None, search_library=scikit-learn, search_algorithm=None, early_stopping=False, early_stopping_max_iters=10, choose_better=True, fit_kwargs=None, groups=None, return_tuner=False, verbose=True, tuner_verbose=True, return_train_score=False, kwargs={}, self=<pycaret.classification.oop.ClassificationExperiment object at 0x00000235D09D6800>)
+2023-06-11 20:49:56,626:INFO:Checking exceptions
+2023-06-11 20:49:56,636:INFO:Copying training dataset
+2023-06-11 20:49:56,643:INFO:Checking base model
+2023-06-11 20:49:56,643:INFO:Base model : Gradient Boosting Classifier
+2023-06-11 20:49:56,644:INFO:Declaring metric variables
+2023-06-11 20:49:56,644:INFO:Defining Hyperparameters
+2023-06-11 20:49:56,728:INFO:Tuning with n_jobs=-1
+2023-06-11 20:49:56,728:INFO:Initializing RandomizedSearchCV
+2023-06-11 20:50:02,525:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.52s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:50:04,205:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.58s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:50:11,145:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.53s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:50:11,681:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.56s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:50:12,134:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.50s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:51:27,743:INFO:best_params: {'actual_estimator__subsample': 0.7, 'actual_estimator__n_estimators': 80, 'actual_estimator__min_samples_split': 10, 'actual_estimator__min_samples_leaf': 2, 'actual_estimator__min_impurity_decrease': 0.0002, 'actual_estimator__max_features': 'log2', 'actual_estimator__max_depth': 5, 'actual_estimator__learning_rate': 0.3}
+2023-06-11 20:51:27,744:INFO:Hyperparameter search completed
+2023-06-11 20:51:27,744:INFO:SubProcess create_model() called ==================================
+2023-06-11 20:51:27,744:INFO:Initializing create_model()
+2023-06-11 20:51:27,744:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x00000235D09D6800>, estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=True, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x00000235CBCAC190>, model_only=True, return_train_score=False, kwargs={'subsample': 0.7, 'n_estimators': 80, 'min_samples_split': 10, 'min_samples_leaf': 2, 'min_impurity_decrease': 0.0002, 'max_features': 'log2', 'max_depth': 5, 'learning_rate': 0.3})
+2023-06-11 20:51:27,744:INFO:Checking exceptions
+2023-06-11 20:51:27,744:INFO:Importing libraries
+2023-06-11 20:51:27,744:INFO:Copying training dataset
+2023-06-11 20:51:27,755:INFO:Defining folds
+2023-06-11 20:51:27,755:INFO:Declaring metric variables
+2023-06-11 20:51:27,755:INFO:Importing untrained model
+2023-06-11 20:51:27,755:INFO:Declaring custom model
+2023-06-11 20:51:27,756:INFO:Gradient Boosting Classifier Imported successfully
+2023-06-11 20:51:27,756:INFO:Starting cross validation
+2023-06-11 20:51:27,763:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-06-11 20:51:32,559:INFO:Calculating mean and std
+2023-06-11 20:51:32,560:INFO:Creating metrics dataframe
+2023-06-11 20:51:32,561:INFO:Finalizing model
+2023-06-11 20:51:33,788:INFO:Uploading results into container
+2023-06-11 20:51:33,789:INFO:Uploading model into container now
+2023-06-11 20:51:33,790:INFO:_master_model_container: 2
+2023-06-11 20:51:33,790:INFO:_display_container: 3
+2023-06-11 20:51:33,790:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.3, loss='log_loss', max_depth=5,
+                           max_features='log2', max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002, min_samples_leaf=2,
+                           min_samples_split=10, min_weight_fraction_leaf=0.0,
+                           n_estimators=80, n_iter_no_change=None,
+                           random_state=7188, subsample=0.7, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-06-11 20:51:33,790:INFO:create_model() successfully completed......................................
+2023-06-11 20:51:33,868:INFO:SubProcess create_model() end ==================================
+2023-06-11 20:51:33,868:INFO:choose_better activated
+2023-06-11 20:51:33,869:INFO:SubProcess create_model() called ==================================
+2023-06-11 20:51:33,869:INFO:Initializing create_model()
+2023-06-11 20:51:33,869:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x00000235D09D6800>, estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-06-11 20:51:33,869:INFO:Checking exceptions
+2023-06-11 20:51:33,870:INFO:Importing libraries
+2023-06-11 20:51:33,870:INFO:Copying training dataset
+2023-06-11 20:51:33,881:INFO:Defining folds
+2023-06-11 20:51:33,881:INFO:Declaring metric variables
+2023-06-11 20:51:33,881:INFO:Importing untrained model
+2023-06-11 20:51:33,881:INFO:Declaring custom model
+2023-06-11 20:51:33,882:INFO:Gradient Boosting Classifier Imported successfully
+2023-06-11 20:51:33,882:INFO:Starting cross validation
+2023-06-11 20:51:33,890:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-06-11 20:51:38,907:INFO:Calculating mean and std
+2023-06-11 20:51:38,907:INFO:Creating metrics dataframe
+2023-06-11 20:51:38,910:INFO:Finalizing model
+2023-06-11 20:51:39,538:INFO:Uploading results into container
+2023-06-11 20:51:39,539:INFO:Uploading model into container now
+2023-06-11 20:51:39,539:INFO:_master_model_container: 3
+2023-06-11 20:51:39,539:INFO:_display_container: 4
+2023-06-11 20:51:39,540:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-06-11 20:51:39,540:INFO:create_model() successfully completed......................................
+2023-06-11 20:51:39,614:INFO:SubProcess create_model() end ==================================
+2023-06-11 20:51:39,614:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False) result for Accuracy is 0.9989
+2023-06-11 20:51:39,615:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.3, loss='log_loss', max_depth=5,
+                           max_features='log2', max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002, min_samples_leaf=2,
+                           min_samples_split=10, min_weight_fraction_leaf=0.0,
+                           n_estimators=80, n_iter_no_change=None,
+                           random_state=7188, subsample=0.7, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False) result for Accuracy is 0.9989
+2023-06-11 20:51:39,615:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False) is best model
+2023-06-11 20:51:39,616:INFO:choose_better completed
+2023-06-11 20:51:39,616:INFO:Original model was better than the tuned model, hence it will be returned. NOTE: The display metrics are for the tuned model (not the original one).
+2023-06-11 20:51:39,616:INFO:Creating Dashboard logs
+2023-06-11 20:51:39,616:INFO:Model: Gradient Boosting Classifier
+2023-06-11 20:51:39,651:INFO:Logged params: {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_loss', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_iter_no_change': None, 'random_state': 7188, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2023-06-11 20:51:39,738:INFO:Initializing predict_model()
+2023-06-11 20:51:39,738:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x00000235D09D6800>, estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x00000235E0ACF520>)
+2023-06-11 20:51:39,738:INFO:Checking exceptions
+2023-06-11 20:51:39,738:INFO:Preloading libraries
+2023-06-11 20:51:40,517:INFO:_master_model_container: 3
+2023-06-11 20:51:40,517:INFO:_display_container: 3
+2023-06-11 20:51:40,518:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=7188, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-06-11 20:51:40,518:INFO:tune_model() successfully completed......................................
+2023-06-11 20:52:34,999:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:52:34,999:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:52:35,000:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:52:35,000:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2023-06-11 20:52:35,740:WARNING:
+'prophet' is a soft dependency and not included in the pycaret installation. Please run: `pip install prophet` to install.
+2023-06-11 20:52:36,997:WARNING:C:\Users\21655\PycharmProjects\PFE\model.py:14: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql('select * from conseillers', con=db_connect)
+
+2023-06-11 20:52:37,536:INFO:PyCaret ClassificationExperiment
+2023-06-11 20:52:37,536:INFO:Logging name: Churn
+2023-06-11 20:52:37,536:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2023-06-11 20:52:37,536:INFO:version 3.0.2
+2023-06-11 20:52:37,536:INFO:Initializing setup()
+2023-06-11 20:52:37,536:INFO:self.USI: 11b9
+2023-06-11 20:52:37,536:INFO:self._variable_keys: {'y', 'X_test', 'html_param', 'X', 'X_train', 'idx', 'data', 'logging_param', 'gpu_param', 'USI', 'exp_id', 'y_train', 'exp_name_log', '_available_plots', 'fold_groups_param', 'fix_imbalance', 'y_test', 'pipeline', 'is_multiclass', 'log_plots_param', 'memory', 'fold_generator', 'gpu_n_jobs_param', 'seed', 'target_param', '_ml_usecase', 'fold_shuffle_param', 'n_jobs_param'}
+2023-06-11 20:52:37,536:INFO:Checking environment
+2023-06-11 20:52:37,536:INFO:python_version: 3.10.7
+2023-06-11 20:52:37,537:INFO:python_build: ('tags/v3.10.7:6cc6b13', 'Sep  5 2022 14:08:36')
+2023-06-11 20:52:37,537:INFO:machine: AMD64
+2023-06-11 20:52:37,559:INFO:platform: Windows-10-10.0.22621-SP0
+2023-06-11 20:52:37,561:INFO:Memory: svmem(total=12728344576, available=2371284992, percent=81.4, used=10357059584, free=2371284992)
+2023-06-11 20:52:37,561:INFO:Physical Core: 6
+2023-06-11 20:52:37,562:INFO:Logical Core: 12
+2023-06-11 20:52:37,562:INFO:Checking libraries
+2023-06-11 20:52:37,562:INFO:System:
+2023-06-11 20:52:37,562:INFO:    python: 3.10.7 (tags/v3.10.7:6cc6b13, Sep  5 2022, 14:08:36) [MSC v.1933 64 bit (AMD64)]
+2023-06-11 20:52:37,562:INFO:executable: C:\Users\21655\PycharmProjects\PFE\venv\Scripts\python.exe
+2023-06-11 20:52:37,562:INFO:   machine: Windows-10-10.0.22621-SP0
+2023-06-11 20:52:37,562:INFO:PyCaret required dependencies:
+2023-06-11 20:52:37,562:INFO:                 pip: 22.3.1
+2023-06-11 20:52:37,562:INFO:          setuptools: 65.5.1
+2023-06-11 20:52:37,562:INFO:             pycaret: 3.0.2
+2023-06-11 20:52:37,562:INFO:             IPython: 8.14.0
+2023-06-11 20:52:37,562:INFO:          ipywidgets: 8.0.6
+2023-06-11 20:52:37,562:INFO:                tqdm: 4.65.0
+2023-06-11 20:52:37,562:INFO:               numpy: 1.24.3
+2023-06-11 20:52:37,562:INFO:              pandas: 2.0.1
+2023-06-11 20:52:37,562:INFO:              jinja2: 3.1.2
+2023-06-11 20:52:37,562:INFO:               scipy: 1.10.1
+2023-06-11 20:52:37,562:INFO:              joblib: 1.2.0
+2023-06-11 20:52:37,562:INFO:             sklearn: 1.2.2
+2023-06-11 20:52:37,562:INFO:                pyod: 1.0.9
+2023-06-11 20:52:37,562:INFO:            imblearn: 0.10.1
+2023-06-11 20:52:37,562:INFO:   category_encoders: 2.6.1
+2023-06-11 20:52:37,563:INFO:            lightgbm: 3.3.5
+2023-06-11 20:52:37,563:INFO:               numba: 0.57.0
+2023-06-11 20:52:37,563:INFO:            requests: 2.29.0
+2023-06-11 20:52:37,563:INFO:          matplotlib: 3.7.1
+2023-06-11 20:52:37,563:INFO:          scikitplot: 0.3.7
+2023-06-11 20:52:37,563:INFO:         yellowbrick: 1.5
+2023-06-11 20:52:37,563:INFO:              plotly: 5.14.1
+2023-06-11 20:52:37,563:INFO:             kaleido: 0.2.1
+2023-06-11 20:52:37,563:INFO:         statsmodels: 0.14.0
+2023-06-11 20:52:37,563:INFO:              sktime: 0.17.0
+2023-06-11 20:52:37,563:INFO:               tbats: 1.1.3
+2023-06-11 20:52:37,563:INFO:            pmdarima: 2.0.3
+2023-06-11 20:52:37,563:INFO:              psutil: 5.9.5
+2023-06-11 20:52:37,563:INFO:PyCaret optional dependencies:
+2023-06-11 20:52:37,576:INFO:                shap: Not installed
+2023-06-11 20:52:37,576:INFO:           interpret: Not installed
+2023-06-11 20:52:37,576:INFO:                umap: Not installed
+2023-06-11 20:52:37,576:INFO:    pandas_profiling: Not installed
+2023-06-11 20:52:37,576:INFO:  explainerdashboard: Not installed
+2023-06-11 20:52:37,576:INFO:             autoviz: Not installed
+2023-06-11 20:52:37,576:INFO:           fairlearn: Not installed
+2023-06-11 20:52:37,576:INFO:             xgboost: Not installed
+2023-06-11 20:52:37,576:INFO:            catboost: 1.2
+2023-06-11 20:52:37,576:INFO:              kmodes: Not installed
+2023-06-11 20:52:37,578:INFO:             mlxtend: Not installed
+2023-06-11 20:52:37,578:INFO:       statsforecast: Not installed
+2023-06-11 20:52:37,578:INFO:        tune_sklearn: Not installed
+2023-06-11 20:52:37,578:INFO:                 ray: Not installed
+2023-06-11 20:52:37,578:INFO:            hyperopt: Not installed
+2023-06-11 20:52:37,578:INFO:              optuna: Not installed
+2023-06-11 20:52:37,578:INFO:               skopt: Not installed
+2023-06-11 20:52:37,578:INFO:              mlflow: 2.4.1
+2023-06-11 20:52:37,578:INFO:              gradio: Not installed
+2023-06-11 20:52:37,578:INFO:             fastapi: Not installed
+2023-06-11 20:52:37,578:INFO:             uvicorn: Not installed
+2023-06-11 20:52:37,578:INFO:              m2cgen: Not installed
+2023-06-11 20:52:37,578:INFO:           evidently: Not installed
+2023-06-11 20:52:37,578:INFO:               fugue: Not installed
+2023-06-11 20:52:37,578:INFO:           streamlit: 1.22.0
+2023-06-11 20:52:37,578:INFO:             prophet: Not installed
+2023-06-11 20:52:37,578:INFO:None
+2023-06-11 20:52:37,578:INFO:Set up data.
+2023-06-11 20:52:37,585:INFO:Set up train/test split.
+2023-06-11 20:52:37,594:INFO:Set up index.
+2023-06-11 20:52:37,594:INFO:Set up folding strategy.
+2023-06-11 20:52:37,594:INFO:Assigning column types.
+2023-06-11 20:52:37,604:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2023-06-11 20:52:37,641:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-06-11 20:52:37,643:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-06-11 20:52:37,675:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:52:37,726:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:52:37,809:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2023-06-11 20:52:37,810:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-06-11 20:52:37,843:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:52:37,843:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:52:37,843:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2023-06-11 20:52:37,910:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-06-11 20:52:37,947:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:52:37,947:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:52:38,009:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2023-06-11 20:52:38,065:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:52:38,066:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:52:38,066:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2023-06-11 20:52:38,135:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:52:38,136:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:52:38,210:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:52:38,210:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:52:38,212:INFO:Preparing preprocessing pipeline...
+2023-06-11 20:52:38,216:INFO:Set up simple imputation.
+2023-06-11 20:52:38,216:INFO:Set up removing outliers.
+2023-06-11 20:52:38,216:INFO:Set up imbalanced handling.
+2023-06-11 20:52:38,216:INFO:Set up feature normalization.
+2023-06-11 20:52:38,419:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:39,216:INFO:Finished creating preprocessing pipeline.
+2023-06-11 20:52:39,227:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\21655\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['ligne', 'Nb_fils_direct',
+                                             'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                                             'Prime_animation',
+                                             'Prime_parrainage',
+                                             'Nb_fois_actif', 'Anciennete'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_em...
+                                                               n_jobs=1,
+                                                               random_state=4185,
+                                                               threshold=0.05))),
+                ('balance',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=FixImbalancer(estimator=SMOTE(k_neighbors=5,
+                                                                              n_jobs=None,
+                                                                              random_state=None,
+                                                                              sampling_strategy='auto')))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False)
+2023-06-11 20:52:39,227:INFO:Creating final display dataframe.
+2023-06-11 20:52:39,487:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:40,340:INFO:Setup _display_container:                     Description            Value
+0                    Session id             4185
+1                        Target          quitter
+2                   Target type           Binary
+3           Original data shape      (10000, 24)
+4        Transformed data shape      (12754, 24)
+5   Transformed train set shape       (9754, 24)
+6    Transformed test set shape       (3000, 24)
+7              Numeric features               10
+8                    Preprocess             True
+9               Imputation type           simple
+10           Numeric imputation             mean
+11       Categorical imputation             mode
+12              Remove outliers             True
+13           Outliers threshold             0.05
+14                Fix imbalance             True
+15         Fix imbalance method            SMOTE
+16                    Normalize             True
+17             Normalize method           zscore
+18               Fold Generator  StratifiedKFold
+19                  Fold Number               10
+20                     CPU Jobs               -1
+21                      Use GPU            False
+22               Log Experiment     MlflowLogger
+23              Experiment Name            Churn
+24                          USI             11b9
+2023-06-11 20:52:40,428:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:52:40,429:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:52:40,513:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2023-06-11 20:52:40,514:INFO:Soft dependency imported: catboost: 1.2
+2023-06-11 20:52:40,514:INFO:Logging experiment in loggers
+2023-06-11 20:52:40,800:INFO:SubProcess save_model() called ==================================
+2023-06-11 20:52:40,814:INFO:Initializing save_model()
+2023-06-11 20:52:40,814:INFO:save_model(model=Pipeline(memory=FastMemory(location=C:\Users\21655\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['ligne', 'Nb_fils_direct',
+                                             'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                                             'Prime_animation',
+                                             'Prime_parrainage',
+                                             'Nb_fois_actif', 'Anciennete'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_em...
+                                                               n_jobs=1,
+                                                               random_state=4185,
+                                                               threshold=0.05))),
+                ('balance',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=FixImbalancer(estimator=SMOTE(k_neighbors=5,
+                                                                              n_jobs=None,
+                                                                              random_state=None,
+                                                                              sampling_strategy='auto')))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False), model_name=C:\Users\21655\AppData\Local\Temp\tmp9ta8flxr\Transformation Pipeline, prep_pipe_=Pipeline(memory=FastMemory(location=C:\Users\21655\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['ligne', 'Nb_fils_direct',
+                                             'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                                             'Prime_animation',
+                                             'Prime_parrainage',
+                                             'Nb_fois_actif', 'Anciennete'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_em...
+                                                               n_jobs=1,
+                                                               random_state=4185,
+                                                               threshold=0.05))),
+                ('balance',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=FixImbalancer(estimator=SMOTE(k_neighbors=5,
+                                                                              n_jobs=None,
+                                                                              random_state=None,
+                                                                              sampling_strategy='auto')))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False), verbose=False, use_case=MLUsecase.CLASSIFICATION, kwargs={})
+2023-06-11 20:52:40,814:INFO:Adding model into prep_pipe
+2023-06-11 20:52:40,814:WARNING:Only Model saved as it was a pipeline.
+2023-06-11 20:52:40,849:INFO:C:\Users\21655\AppData\Local\Temp\tmp9ta8flxr\Transformation Pipeline.pkl saved in current working directory
+2023-06-11 20:52:40,856:INFO:Pipeline(memory=FastMemory(location=C:\Users\21655\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['ligne', 'Nb_fils_direct',
+                                             'Nb_fils', 'CE', 'CP', 'NB_cheque',
+                                             'Prime_animation',
+                                             'Prime_parrainage',
+                                             'Nb_fois_actif', 'Anciennete'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_em...
+                                                               n_jobs=1,
+                                                               random_state=4185,
+                                                               threshold=0.05))),
+                ('balance',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=FixImbalancer(estimator=SMOTE(k_neighbors=5,
+                                                                              n_jobs=None,
+                                                                              random_state=None,
+                                                                              sampling_strategy='auto')))),
+                ('normalize',
+                 TransformerWrapper(exclude=None, include=None,
+                                    transformer=StandardScaler(copy=True,
+                                                               with_mean=True,
+                                                               with_std=True)))],
+         verbose=False)
+2023-06-11 20:52:40,856:INFO:save_model() successfully completed......................................
+2023-06-11 20:52:40,927:INFO:SubProcess save_model() end ==================================
+2023-06-11 20:52:40,942:INFO:setup() successfully completed in 3.43s...............
+2023-06-11 20:52:40,942:INFO:Initializing create_model()
+2023-06-11 20:52:40,942:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001C682286800>, estimator=gbc, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=True, system=True, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-06-11 20:52:40,942:INFO:Checking exceptions
+2023-06-11 20:52:40,944:INFO:Importing libraries
+2023-06-11 20:52:40,944:INFO:Copying training dataset
+2023-06-11 20:52:40,956:INFO:Defining folds
+2023-06-11 20:52:40,956:INFO:Declaring metric variables
+2023-06-11 20:52:40,956:INFO:Importing untrained model
+2023-06-11 20:52:40,956:INFO:Gradient Boosting Classifier Imported successfully
+2023-06-11 20:52:40,956:INFO:Starting cross validation
+2023-06-11 20:52:40,964:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-06-11 20:52:46,875:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,881:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,898:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,924:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,925:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,926:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,930:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,939:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,948:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:46,955:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\sklearn\base.py:439: UserWarning: X does not have valid feature names, but IsolationForest was fitted with feature names
+  warnings.warn(
+
+2023-06-11 20:52:56,918:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.54s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:52:57,004:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.66s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:53:02,563:INFO:Calculating mean and std
+2023-06-11 20:53:02,563:INFO:Creating metrics dataframe
+2023-06-11 20:53:02,565:INFO:Finalizing model
+2023-06-11 20:53:06,779:INFO:Creating Dashboard logs
+2023-06-11 20:53:06,779:INFO:Model: Gradient Boosting Classifier
+2023-06-11 20:53:06,813:INFO:Logged params: {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_loss', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_iter_no_change': None, 'random_state': 4185, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2023-06-11 20:53:06,902:INFO:Initializing predict_model()
+2023-06-11 20:53:06,902:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001C682286800>, estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=4185, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001C6923B9870>)
+2023-06-11 20:53:06,902:INFO:Checking exceptions
+2023-06-11 20:53:06,902:INFO:Preloading libraries
+2023-06-11 20:53:07,153:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\_distutils_hack\__init__.py:33: UserWarning: Setuptools is replacing distutils.
+  warnings.warn("Setuptools is replacing distutils.")
+
+2023-06-11 20:53:07,738:INFO:Uploading results into container
+2023-06-11 20:53:07,739:INFO:Uploading model into container now
+2023-06-11 20:53:07,753:INFO:_master_model_container: 1
+2023-06-11 20:53:07,753:INFO:_display_container: 2
+2023-06-11 20:53:07,753:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=4185, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-06-11 20:53:07,753:INFO:create_model() successfully completed......................................
+2023-06-11 20:53:07,854:INFO:Initializing tune_model()
+2023-06-11 20:53:07,855:INFO:tune_model(estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=4185, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), fold=None, round=4, n_iter=10, custom_grid=None, optimize=Accuracy, custom_scorer=None, search_library=scikit-learn, search_algorithm=None, early_stopping=False, early_stopping_max_iters=10, choose_better=True, fit_kwargs=None, groups=None, return_tuner=False, verbose=True, tuner_verbose=True, return_train_score=False, kwargs={}, self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001C682286800>)
+2023-06-11 20:53:07,855:INFO:Checking exceptions
+2023-06-11 20:53:07,863:INFO:Copying training dataset
+2023-06-11 20:53:07,873:INFO:Checking base model
+2023-06-11 20:53:07,873:INFO:Base model : Gradient Boosting Classifier
+2023-06-11 20:53:07,874:INFO:Declaring metric variables
+2023-06-11 20:53:07,874:INFO:Defining Hyperparameters
+2023-06-11 20:53:07,975:INFO:Tuning with n_jobs=-1
+2023-06-11 20:53:07,976:INFO:Initializing RandomizedSearchCV
+2023-06-11 20:53:11,354:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.51s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:53:15,758:WARNING:C:\Users\21655\PycharmProjects\PFE\venv\lib\site-packages\pycaret\internal\pipeline.py:260: UserWarning: Persisting input arguments took 0.50s to run.
+If this happens often in your code, it can cause performance problems 
+(results will be correct in all cases). 
+The reason for this is probably some large input arguments for a wrapped
+ function (e.g. large strings).
+THIS IS A JOBLIB ISSUE. If you can, kindly provide the joblib's team with an
+ example so that they can fix the problem.
+  fitted_estimator = self._memory_fit(
+
+2023-06-11 20:54:33,985:INFO:best_params: {'actual_estimator__subsample': 0.75, 'actual_estimator__n_estimators': 70, 'actual_estimator__min_samples_split': 7, 'actual_estimator__min_samples_leaf': 3, 'actual_estimator__min_impurity_decrease': 0.0002, 'actual_estimator__max_features': 1.0, 'actual_estimator__max_depth': 9, 'actual_estimator__learning_rate': 0.2}
+2023-06-11 20:54:33,985:INFO:Hyperparameter search completed
+2023-06-11 20:54:33,985:INFO:SubProcess create_model() called ==================================
+2023-06-11 20:54:33,986:INFO:Initializing create_model()
+2023-06-11 20:54:33,986:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001C682286800>, estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=4185, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=True, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001C682C563B0>, model_only=True, return_train_score=False, kwargs={'subsample': 0.75, 'n_estimators': 70, 'min_samples_split': 7, 'min_samples_leaf': 3, 'min_impurity_decrease': 0.0002, 'max_features': 1.0, 'max_depth': 9, 'learning_rate': 0.2})
+2023-06-11 20:54:33,986:INFO:Checking exceptions
+2023-06-11 20:54:33,986:INFO:Importing libraries
+2023-06-11 20:54:33,986:INFO:Copying training dataset
+2023-06-11 20:54:33,996:INFO:Defining folds
+2023-06-11 20:54:33,996:INFO:Declaring metric variables
+2023-06-11 20:54:33,996:INFO:Importing untrained model
+2023-06-11 20:54:33,996:INFO:Declaring custom model
+2023-06-11 20:54:33,998:INFO:Gradient Boosting Classifier Imported successfully
+2023-06-11 20:54:33,998:INFO:Starting cross validation
+2023-06-11 20:54:34,008:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-06-11 20:54:39,277:INFO:Calculating mean and std
+2023-06-11 20:54:39,278:INFO:Creating metrics dataframe
+2023-06-11 20:54:39,279:INFO:Finalizing model
+2023-06-11 20:54:42,177:INFO:Uploading results into container
+2023-06-11 20:54:42,178:INFO:Uploading model into container now
+2023-06-11 20:54:42,178:INFO:_master_model_container: 2
+2023-06-11 20:54:42,178:INFO:_display_container: 3
+2023-06-11 20:54:42,179:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.2, loss='log_loss', max_depth=9,
+                           max_features=1.0, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002, min_samples_leaf=3,
+                           min_samples_split=7, min_weight_fraction_leaf=0.0,
+                           n_estimators=70, n_iter_no_change=None,
+                           random_state=4185, subsample=0.75, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-06-11 20:54:42,179:INFO:create_model() successfully completed......................................
+2023-06-11 20:54:42,251:INFO:SubProcess create_model() end ==================================
+2023-06-11 20:54:42,251:INFO:choose_better activated
+2023-06-11 20:54:42,251:INFO:SubProcess create_model() called ==================================
+2023-06-11 20:54:42,252:INFO:Initializing create_model()
+2023-06-11 20:54:42,252:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001C682286800>, estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=4185, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=None, model_only=True, return_train_score=False, kwargs={})
+2023-06-11 20:54:42,252:INFO:Checking exceptions
+2023-06-11 20:54:42,253:INFO:Importing libraries
+2023-06-11 20:54:42,253:INFO:Copying training dataset
+2023-06-11 20:54:42,265:INFO:Defining folds
+2023-06-11 20:54:42,265:INFO:Declaring metric variables
+2023-06-11 20:54:42,265:INFO:Importing untrained model
+2023-06-11 20:54:42,265:INFO:Declaring custom model
+2023-06-11 20:54:42,266:INFO:Gradient Boosting Classifier Imported successfully
+2023-06-11 20:54:42,266:INFO:Starting cross validation
+2023-06-11 20:54:42,276:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2023-06-11 20:54:47,903:INFO:Calculating mean and std
+2023-06-11 20:54:47,903:INFO:Creating metrics dataframe
+2023-06-11 20:54:47,905:INFO:Finalizing model
+2023-06-11 20:54:48,668:INFO:Uploading results into container
+2023-06-11 20:54:48,669:INFO:Uploading model into container now
+2023-06-11 20:54:48,669:INFO:_master_model_container: 3
+2023-06-11 20:54:48,669:INFO:_display_container: 4
+2023-06-11 20:54:48,670:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=4185, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-06-11 20:54:48,670:INFO:create_model() successfully completed......................................
+2023-06-11 20:54:48,742:INFO:SubProcess create_model() end ==================================
+2023-06-11 20:54:48,742:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='log_loss', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_samples_leaf=1,
+                           min_samples_split=2, min_weight_fraction_leaf=0.0,
+                           n_estimators=100, n_iter_no_change=None,
+                           random_state=4185, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False) result for Accuracy is 0.9984
+2023-06-11 20:54:48,743:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.2, loss='log_loss', max_depth=9,
+                           max_features=1.0, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002, min_samples_leaf=3,
+                           min_samples_split=7, min_weight_fraction_leaf=0.0,
+                           n_estimators=70, n_iter_no_change=None,
+                           random_state=4185, subsample=0.75, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False) result for Accuracy is 0.9989
+2023-06-11 20:54:48,744:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.2, loss='log_loss', max_depth=9,
+                           max_features=1.0, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002, min_samples_leaf=3,
+                           min_samples_split=7, min_weight_fraction_leaf=0.0,
+                           n_estimators=70, n_iter_no_change=None,
+                           random_state=4185, subsample=0.75, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False) is best model
+2023-06-11 20:54:48,744:INFO:choose_better completed
+2023-06-11 20:54:48,744:INFO:Creating Dashboard logs
+2023-06-11 20:54:48,744:INFO:Model: Gradient Boosting Classifier
+2023-06-11 20:54:48,778:INFO:Logged params: {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.2, 'loss': 'log_loss', 'max_depth': 9, 'max_features': 1.0, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0002, 'min_samples_leaf': 3, 'min_samples_split': 7, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 70, 'n_iter_no_change': None, 'random_state': 4185, 'subsample': 0.75, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2023-06-11 20:54:48,860:INFO:Initializing predict_model()
+2023-06-11 20:54:48,860:INFO:predict_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001C682286800>, estimator=GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.2, loss='log_loss', max_depth=9,
+                           max_features=1.0, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002, min_samples_leaf=3,
+                           min_samples_split=7, min_weight_fraction_leaf=0.0,
+                           n_estimators=70, n_iter_no_change=None,
+                           random_state=4185, subsample=0.75, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False), probability_threshold=None, encoded_labels=False, raw_score=False, round=4, verbose=False, ml_usecase=None, preprocess=True, encode_labels=<function _SupervisedExperiment.predict_model.<locals>.encode_labels at 0x000001C6923BAEF0>)
+2023-06-11 20:54:48,860:INFO:Checking exceptions
+2023-06-11 20:54:48,861:INFO:Preloading libraries
+2023-06-11 20:54:49,684:INFO:_master_model_container: 3
+2023-06-11 20:54:49,684:INFO:_display_container: 3
+2023-06-11 20:54:49,684:INFO:GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.2, loss='log_loss', max_depth=9,
+                           max_features=1.0, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0002, min_samples_leaf=3,
+                           min_samples_split=7, min_weight_fraction_leaf=0.0,
+                           n_estimators=70, n_iter_no_change=None,
+                           random_state=4185, subsample=0.75, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2023-06-11 20:54:49,684:INFO:tune_model() successfully completed......................................
