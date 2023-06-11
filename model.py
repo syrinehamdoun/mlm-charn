@@ -2,22 +2,14 @@
 import pandas as pd
 import numpy as np
 import mysql.connector
-from catboost import CatBoostClassifier
-from sklearn.metrics import fbeta_score
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn import metrics
 import pickle
-from imblearn.over_sampling import SMOTE
-from lightgbm import LGBMClassifier
 import joblib
 from sqlalchemy import create_engine
 
 # Establish a MySQL database connection
-db_connect = create_engine('mysql+mysqlconnector://root@localhost/banque')
-# db_connect = create_engine('mysql+mysqlconnector://root:pY1jcn5XdnFH1mFvNCtF@containers-us-west-188.railway.app:6949/banque')
+db_connect = mysql.connector.connect(host='localhost', database='banque', user='root', password='')
+df = pd.read_sql('select * from conseillers', con=db_connect)
 
-df = pd.read_sql('select * from client', con=db_connect)
 
 
 # Étape 3: Prétraitement des données
