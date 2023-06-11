@@ -5,6 +5,9 @@ import mysql.connector
 import pickle
 import joblib
 from sqlalchemy import create_engine
+from pycaret.classification import *
+from datetime import date
+from pycaret import classification
 
 # Establish a MySQL database connection
 db_connect = mysql.connector.connect(host='localhost', database='banque', user='root', password='')
