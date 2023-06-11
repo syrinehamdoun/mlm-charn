@@ -113,7 +113,7 @@ def add_customer():
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
             cursor.execute('INSERT INTO conseillers VALUES (NULL, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                           (id, nom, Nb_fils_direct, pays, genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription,Nb_fois_actif, quitter))
+                           (id, Nom, Nb_fils_direct, Pays, Genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription,Nb_fois_actif, Quitter))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             a = 2
@@ -658,7 +658,13 @@ def predictionSingle(ID_conseiller):
 def prediction2():
     return render_template('ResultatPred.html', username=session['username'])
 
+class CustomUnpickler(pickle.Unpickler):
 
+    def find_class(self, module, name):
+        if name == 'Manager':
+            from settings import Manager
+            return Manager
+        return super().find_class(module, name)
 
 if __name__ == '__main__':
     app.run(debug=True)
