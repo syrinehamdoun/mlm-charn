@@ -182,7 +182,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align">N° conseiller<span class="required">*</span>
                       </label>
                       <div class="col-md-4 col-sm-4 ">
-                        <input type="text" name="id" id="id" maxlength="8" minlength="8" name="id" required class="form-control ">
+                        <input type="text" name="id" id="id"  name="id" required class="form-control ">
                       </div>
             <a href = "javascript:;" onclick = "this.href='/get_predict_customer/' + document.getElementById('id').value">
                 <button type="button"  class="btn btn-round btn-info" ><i class="fa fa-search"></i></button></a>
@@ -193,7 +193,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="nom">Nom<span class="required">*</span>
                       </label>
                       <div class="col-md-4 col-sm-4 ">
-                        <input type="text" name="nom" id="nom" required="required" class="form-control " disabled>
+                        <input type="text" name="Nom" id="Nom" required="required" class="form-control " >
                       </div>
                     </div>
 
@@ -203,7 +203,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align">Pays<span class="required">*</span>
                       </label>
                       <div class="col-md-4 col-sm-4 ">
-                        <select class="form-control" id="pays" name="pays" disabled>
+                        <select class="form-control" id="pays" name="pays" >
                           <option>Tunisie</option>
                           <option>Algérie</option>
                           <option>Cote d'ivoire</option>
@@ -216,7 +216,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align" >Date naissance<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="date" id="Date_naissance"  name="Date_naissance" required="required" class="form-control " disabled>
+                        <input type="date" id="Date_naissance"  name="Date_naissance" required="required" class="form-control " >
                       </div>
                     </div>
 
@@ -225,7 +225,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align" >Date inscription<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="date" id="Date_inscription"  name="Date_inscription" required="required" class="form-control " disabled>
+                        <input type="date" id="Date_inscription"  name="Date_inscription" required="required" class="form-control " >
                       </div>
                     </div>
 
@@ -234,28 +234,38 @@ div.upload input[type="file"] {
                       <div class="col-md-6 col-sm-6 ">
 
                        <div id="genre" class="btn-group" data-toggle="buttons">
-                                <input type="radio" name="genre" value="Homme" class="flat" required disabled> &nbsp; Homme &nbsp; <br>
-                                <input type="radio" name="genre" value="Femme" class="flat" disabled>   &nbsp; Femme
+                                <input type="radio" name="genre" value="Homme" class="flat" required > &nbsp; Homme &nbsp; <br>
+                                <input type="radio" name="genre" value="Femme" class="flat" >   &nbsp; Femme
                         </div>
 
                       </div>
                     </div>
 
 
-                        <div class="item form-group">
-                      <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fois_actif">Nb fois actif<span class="required">*</span>
-                      </label>
-                      <div class="col-md-2 col-sm-2 ">
-                        <input type="number" id="Nb_fois_actif" name="Nb_fois_actif" required="required" class="form-control " disabled>
-                      </div>
+                <div class="item form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fois_actif">Nb fois actif<span class="required">*</span>
+                    </label>
+                    <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="Nb_fois_actif" name="Nb_fois_actif" required="required" class="form-control " >
                     </div>
+                </div>
 
 
-                     <div class="item form-group">
+
+                <div class="item form-group">
+                    <label class="col-form-label col-md-3 col-sm-3 label-align" for="age">Age<span class="required">*</span>
+                    </label>
+                    <div class="col-md-2 col-sm-2 ">
+                        <input type="number" id="age" name="age" required="required" class="form-control " >
+                    </div>
+                </div>
+
+
+                <div class="item form-group">
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fils_direct"> Nb fils direct<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="number" id="Nb_fils_direct" name="Nb_fils_direct" required="required" class="form-control " disabled>
+                        <input type="number" id="Nb_fils_direct" name="Nb_fils_direct" required="required" class="form-control " >
                       </div>
                     </div>
 
@@ -264,21 +274,21 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="Nb_fils">Nb fils<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="number" id="Nb_fils" name="Nb_fils" required="required" class="form-control " disabled>
+                        <input type="number" id="Nb_fils" name="Nb_fils" required="required" class="form-control " >
                       </div>
                     </div>
                 <div class="item form-group">
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="CE">Chiffre équipe<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="number" id="CE" name="CE" required="required" class="form-control " disabled>
+                        <input type="number" id="CE" name="CE" required="required" class="form-control " >
                       </div>
                     </div>
                 <div class="item form-group">
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="CP">Chiffre personnel<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="number" id="CP" name="CP" required="required" class="form-control " disabled>
+                        <input type="number" id="CP" name="CP" required="required" class="form-control " >
                       </div>
                     </div>
 
@@ -286,7 +296,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="NB_cheque">NB de cheques<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="number" id="NB_cheque" name="NB_cheque" required="required" class="form-control " disabled>
+                        <input type="number" id="NB_cheque" name="NB_cheque" required="required" class="form-control " >
                       </div>
                     </div>
 
@@ -294,7 +304,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="Prime_animation">Prime animation<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="number" id="Prime_animation" name="Prime_animation" required="required" class="form-control " disabled>
+                        <input type="number" id="Prime_animation" name="Prime_animation" required="required" class="form-control " >
                       </div>
                     </div>
 
@@ -302,7 +312,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="Prime_parrainage">Prime parrainage<span class="required">*</span>
                       </label>
                       <div class="col-md-2 col-sm-2 ">
-                        <input type="number" id="Prime_parrainage" name="Prime_parrainage" required="required" class="form-control " disabled>
+                        <input type="number" id="Prime_parrainage" name="Prime_parrainage" required="required" class="form-control " >
                       </div>
                     </div>
 
@@ -314,7 +324,7 @@ div.upload input[type="file"] {
                       <label class="col-form-label col-md-3 col-sm-3 label-align" for="grade">Grade <span class="required">*</span>
                       </label>
                        <div class="col-md-2 col-sm-2 ">
-                        <select class="form-control" id="grade" name="grade" disabled>
+                        <select class="form-control" id="grade" name="grade" >
                           <option>1</option>
                           <option>2</option>
                            <option>3</option>
@@ -424,8 +434,12 @@ div.upload input[type="file"] {
                                       <td>{{d.Date_inscription}}</td>
                                   </tr>
                                   <tr>
-                                       <td><b>Nb fois actif</b></td>
+                                      <td><b>Nb fois actif</b></td>
                                       <td>{{d.Nb_fois_actif}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td><b>Age</b></td>
+                                      <td>{{d.Age}}</td>
                                   </tr>
 
                               </table>
@@ -469,7 +483,7 @@ div.upload input[type="file"] {
 
                           <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
 <br><br><br><br>
-                  <form enctype="multipart/form-data" action="{{ url_for('prediction_much_customer') }}" method="POST">
+                  <form enctype="multipart/form-data" action="{{ url_for('prediction_much_customer')}}" method="POST">
                       <center>
 
 

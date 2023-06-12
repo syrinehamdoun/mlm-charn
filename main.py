@@ -352,100 +352,102 @@ sca = joblib.load('model.pkl')
 
 @app.route('/prediction/<ID_conseiller>', methods=['GET', 'POST'])
 def predictionCustomer(ID_conseiller):
-    if request.method == 'POST':
-        Age = int(request.form['age'])
-        Grade = int(request.form['Grade'])
-        Solde = float(request.form['solde'])
-        Nb_fils = int(request.form['Nb_fils'])
-        NB_cheque = int(request.form['NB_cheque'])
-        Prime_animation = int(request.form['Prime_animation'])
-        Nb_fois_actif = int(request.form['Nb_fois_actif'])
-        Prime_parrainage = int(request.form['Prime_parrainage'])
-        CE = float(request.form['CE'])
-        CP = float(request.form['CP'])
-        Nb_fils_direct = float(request.form['Nb_fils_direct'])
+    # if request.method == 'POST':
+    #     Age = int(request.form['age'])
+    #     Grade = int(request.form['Grade'])
+    #     Solde = float(request.form['solde'])
+    #     Nb_fils = int(request.form['Nb_fils'])
+    #     NB_cheque = int(request.form['NB_cheque'])
+    #     Prime_animation = int(request.form['Prime_animation'])
+    #     Nb_fois_actif = int(request.form['Nb_fois_actif'])
+    #     Prime_parrainage = int(request.form['Prime_parrainage'])
+    #     CE = float(request.form['CE'])
+    #     CP = float(request.form['CP'])
+    #     Nb_fils_direct = float(request.form['Nb_fils_direct'])
+    #     Pays = request.form['pays']
+    #
+    #     if (Pays == 'Tunisie'):
+    #         Pays_Tunisie = 1
+    #         Pays_Algerie = 0
+    #         Pays_CIV = 0
+    #         pays = 'Tunisie'
+    #
+    #     elif (Pays == 'Algerie'):
+    #         Pays_Tunisie = 0
+    #         Pays_Algerie = 1
+    #         Pays_CIV = 0
+    #         pays = 'Algerie'
+    #
+    #     else:
+    #         Pays_Tunisie = 0
+    #         Pays_Algerie = 0
+    #         Pays_CIV = 1
+    #         pays = 'CIV'
+    #
+    #     Genre_Homme = request.form['genre']
+    #     if (Genre_Homme == 'Homme'):
+    #         Genre_Homme = 1
+    #         Genre_Femme = 0
+    #         genre = 'Homme'
+    #     else:
+    #         Genre_Homme = 0
+    #         Genre_Femme = 1
+    #         genre = 'Femme'
 
-        Pays_Tunisie = request.form['pays']
-        if (Pays_Tunisie == 'Tunisie'):
-            Pays_Tunisie = 1
-            Pays_Algerie = 0
-            Pays_CIV = 0
-            pays = 'Tunisie'
+        # input_data = [[Grade, Age, Nb_fils_direct, Nb_fils, CE, CP, NB_cheque, Prime_animation, Prime_parrainage,
+        #                Nb_fois_actif, Pays_Tunisie, Genre_Femme]]
+        # input_data = pd.DataFrame(input_data)
+        #
+        # input_data.columns = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
+        #                       'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
+        # c = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
+        #      'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
+        # input_data[c] = sca.transform(input_data[c])
+        #
+        #
+        # prediction = clf.predict(input_data)
+        # prediction_proba = clf.predict_proba(input_data)
+        # prediction_proba = prediction_proba[:, 1]
+        # prediction_proba = (prediction_proba * 100).round(2)
+        # prediction_proba = prediction_proba.item(0)
 
-        elif (Pays_Tunisie == 'Algerie'):
-            Pays_Tunisie = 0
-            Pays_Algerie = 1
-            Pays_CIV = 0
-            pays = 'Algerie'
+        # prediction_proba = 85
+        # prediction = '1'
+        #
+        # if prediction == 1:
+        #     quitter = 1
+        # else:
+        #     quitter = 0
 
-        else:
-            Pays_Tunisie = 0
-            Pays_Algerie = 0
-            Pays_CIV = 1
-            pays = 'CIV'
+        # cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        # exist = cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
+        #
+        # if not exist:
+        #
+        #     cursor.execute('INSERT INTO conseillers_prediction (ID_conseiller, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage,  Nb_fois_actif, Nb_fils, quitter, Probabilite_quitte) VALUES (%s,%s,%s, %s, %s,%s,%s, %s, %s, %s, %s, %s)',
+        #                    (ID_conseiller, Nb_fils_direct, pays, genre, Grade,NB_cheque, Prime_animation, Prime_parrainage,
+        #                      Nb_fois_actif, Nb_fils,quitter, prediction_proba))
+        #
+        #
+        #     mysql.connection.commit()
+        #
+        # else:
+        #     sql = "UPDATE conseillers_prediction set Nb_fils_direct=%s,Pays=%s,Genre=%s,Grade=%s,Nb_fois_actif=%s,Nb_fils=%s,quitter=%s,Probabilite_quitte=%s where ID_conseiller=%s"
+        #     value = (
+        #         Nb_fils_direct, pays, genre, Age, Grade, Solde, Nb_fois_actif, Nb_fils
+        #         , quitter, prediction_proba, ID_conseiller)
+        #     cursor.execute(sql, value)
+        #     mysql.connection.commit()
+    prediction_proba = 85
+    prediction = 0
 
-        Genre_Homme = request.form['genre']
-        if (Genre_Homme == 'Homme'):
-            Genre_Homme = 1
-            Genre_Femme = 0
-            genre = 'Homme'
-        else:
-            Genre_Homme = 0
-            Genre_Femme = 1
-            genre = 'Femme'
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
+    d = cursor.fetchone()
+    print(d)
 
-        input_data = [[Grade, Age, Nb_fils_direct, Nb_fils, CE, CP, NB_cheque, Prime_animation, Prime_parrainage,
-                       Nb_fois_actif, Pays_Tunisie, Genre_Femme]]
-        input_data = pd.DataFrame(input_data)
-
-        input_data.columns = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
-                              'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
-        c = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
-             'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
-        # sc = StandardScaler()
-        input_data[c] = sca.transform(input_data[c])
-
-        # X_test_data=sca.transform(input_data)
-
-        prediction = clf.predict(input_data)
-        prediction_proba = clf.predict_proba(input_data)
-        prediction_proba = prediction_proba[:, 1]
-        prediction_proba = (prediction_proba * 100).round(2)
-        prediction_proba = prediction_proba.item(0)
-
-        if prediction == 1:
-            quitte = 1
-        else:
-            quitte = 0
-
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        exist = cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
-
-        if not exist:
-            cursor.execute('select * from conseillers where ID_conseiller=%s', (ID_conseiller,))
-            data = cursor.fetchone()
-            print(data)
-            Nom = data["Nom"]
-
-            sql = "INSERT INTO conseillers (ID_conseiller, Nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage,  Nb_fois_actif, Nb_fils, quitter, id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            value = (
-                ID_conseiller, Nom, Nb_fils_direct, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage,
-                Nb_fois_actif, Nb_fils, quitte, prediction_proba,)
-            cursor.execute(sql, value)
-            mysql.connection.commit()
-
-        else:
-            sql = "UPDATE conseillers_prediction set Nb_fils_direct=%s,Pays=%s,Genre=%s,Grade=%s,Nb_fois_actif=%s,Nb_fils=%s,Quitte=%s,Probabilite_quitte=%s where ID_conseiller=%s"
-            value = (
-                Nb_fils_direct, pays, genre, Age, Grade, Solde, Nb_fois_actif, Nb_fils
-                , quitte, prediction_proba, ID_conseiller)
-            cursor.execute(sql, value)
-            mysql.connection.commit()
-
-        req = cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
-        d = cursor.fetchone()
-
-        return render_template('prediction.html', prediction=prediction, prediction_proba=prediction_proba, d=d)
+    return render_template('ResultatPred.html', prediction=prediction, prediction_proba=prediction_proba, d=d)
+   # return render_template('prediction.html', prediction=prediction, prediction_proba=prediction_proba, d=d)
 
 
 @app.route('/prediction', methods=['GET', 'POST'])
