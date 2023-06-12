@@ -99,8 +99,6 @@ def add_customer():
         Nb_fois_actif = request.form.get('Nb_fois_actif')
         Quitter = request.form.get('etat')
 
-
-
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM conseillers WHERE ID_conseiller = %s', (id,))
@@ -113,7 +111,8 @@ def add_customer():
         else:
             # Account doesnt exists and the form data is valid, now insert new account into accounts table
             cursor.execute('INSERT INTO conseillers VALUES (NULL, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',
-                           (id, Nom, Nb_fils_direct, Pays, Genre, Nb_fils, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance, Date_inscription,Nb_fois_actif, Quitter))
+                           (id, Nom, Nb_fils_direct, Pays, Genre, Nb_fils, Grade, NB_cheque, Prime_animation,
+                            Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif, Quitter))
             mysql.connection.commit()
             msg = 'You have successfully registered!'
             a = 2
@@ -149,13 +148,12 @@ def update_customer(ID_conseiller):
         Date_inscription = request.form.get('Date_inscription')
         Nb_fois_actif = request.form.get('Nb_fois_actif')
 
-
-
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('UPDATE conseillers set Nom=%s, Pays=%s,Genre=%s,Grade=%s,NB_cheque=%s,'
                        'Prime_animation=%s,Prime_parrainage=%s,Date_naissance=%s,Date_inscription=%s,Nb_fois_actif=%s,Nb_fils=%s where ID_conseiller=%s',
-                       (nom, pays, genre, Grade, NB_cheque,Prime_animation, Prime_parrainage, Date_naissance, Date_inscription, Nb_fois_actif,Nb_fils, ID_conseiller))
+                       (nom, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance,
+                        Date_inscription, Nb_fois_actif, Nb_fils, ID_conseiller))
         mysql.connection.commit()
         msg = 'You have successfully updated!'
         account = cursor.fetchone()
@@ -170,14 +168,11 @@ def delete_customer(ID_conseiller):
     valeurs = (str(ID_conseiller),)
     cursor.execute(requete, valeurs)
 
-
     exist = 'SELECT ID_conseiller FROM conseillers_prediction WHERE ID_conseiller = %s'
     cursor.execute(requete, valeurs)
     if exist:
         requete = 'DELETE FROM conseillers_prediction WHERE ID_conseiller = %s'
         cursor.execute(requete, valeurs)
-
-
 
     return redirect(url_for('historique'))
 
@@ -195,7 +190,7 @@ def delete_customer_analyse(ID_conseiller):
 def historique():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     cursor.execute('SELECT * FROM conseillers')
-    conseillers  = cursor.fetchall()
+    conseillers = cursor.fetchall()
 
     return render_template('historique.html', username=session['username'], conseillers=conseillers)
 
@@ -350,16 +345,9 @@ def get_predict_customer(ID_conseiller):
     return render_template('predictionCustomer.html', username=session['username'], data=data, message=message)
 
 
-# # Load model
-# with open('LightGBM.pkl', 'rb') as file:
-#     model = pickle.load(file)
-#
-# # Load scaler
-# with open('Scaler.pkl', 'rb') as file:
-#     sc = pickle.load(file)
 
 clf = joblib.load('classifier.pkl')
-sca = joblib.load('scale.pkl')
+sca = joblib.load('model.pkl')
 
 
 @app.route('/prediction/<ID_conseiller>', methods=['GET', 'POST'])
@@ -371,10 +359,8 @@ def predictionCustomer(ID_conseiller):
         Nb_fils = int(request.form['Nb_fils'])
         NB_cheque = int(request.form['NB_cheque'])
         Prime_animation = int(request.form['Prime_animation'])
-        Prime_parrainage = int(request.form['Prime_parrainage'])
         Nb_fois_actif = int(request.form['Nb_fois_actif'])
         Prime_parrainage = int(request.form['Prime_parrainage'])
-        Nb_fils = int(request.form['Nb_fils'])
         CE = float(request.form['CE'])
         CP = float(request.form['CP'])
         Nb_fils_direct = float(request.form['Nb_fils_direct'])
@@ -408,16 +394,14 @@ def predictionCustomer(ID_conseiller):
             Genre_Femme = 1
             genre = 'Femme'
 
-
-
-        input_data = [[Grade, Age, Nb_fils_direct, Nb_fils, CE, CP ,NB_cheque,  Prime_animation ,Prime_parrainage,
+        input_data = [[Grade, Age, Nb_fils_direct, Nb_fils, CE, CP, NB_cheque, Prime_animation, Prime_parrainage,
                        Nb_fois_actif, Pays_Tunisie, Genre_Femme]]
         input_data = pd.DataFrame(input_data)
 
         input_data.columns = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
                               'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
         c = ['Grade', 'Age', 'Nb_fils_direct', 'Nb_fils', 'CE', 'CP', 'NB_cheque',
-                              'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
+             'Prime_animation', 'Prime_parrainage', 'Nb_fois_actif', 'Pays_Tunisie', 'Genre_Femme']
         # sc = StandardScaler()
         input_data[c] = sca.transform(input_data[c])
 
@@ -458,12 +442,10 @@ def predictionCustomer(ID_conseiller):
             cursor.execute(sql, value)
             mysql.connection.commit()
 
-        req=cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
-        d=cursor.fetchone()
+        req = cursor.execute('select * from conseillers_prediction where ID_conseiller=%s', (ID_conseiller,))
+        d = cursor.fetchone()
 
-        return render_template('prediction.html', prediction=prediction, prediction_proba=prediction_proba,d=d)
-
-
+        return render_template('prediction.html', prediction=prediction, prediction_proba=prediction_proba, d=d)
 
 
 @app.route('/prediction', methods=['GET', 'POST'])
@@ -495,9 +477,11 @@ def prediction_much_customer():
         Date_naissance = df['Date_naissance']
         Date_inscription = df['Date_inscription']
 
-        df = df[['Pays', 'Genre', 'CE', 'CP', 'Grade', 'Nb_fois_actif', 'Prime_animation', 'Prime_parrainage', 'Date_naissance', 'Nb_fils_direct', 'Date_inscription', 'Quitte']]
+        df = df[['Pays', 'Genre', 'CE', 'CP', 'Grade', 'Nb_fois_actif', 'Prime_animation', 'Prime_parrainage',
+                 'Date_naissance', 'Nb_fils_direct', 'Date_inscription', 'Quitte']]
         df = pd.get_dummies(df)
-        df = df[['Nb_fois_actif','CE', 'CP', 'Date_naissance', 'Grade', 'Prime_animation', 'Prime_parrainage', 'Date_inscription', 'Nb_fils_direct', 'Quitte',
+        df = df[['Nb_fois_actif', 'CE', 'CP', 'Date_naissance', 'Grade', 'Prime_animation', 'Prime_parrainage',
+                 'Date_inscription', 'Nb_fils_direct', 'Quitte',
                  'Pays_Germany', 'Genre_Femme']]
         X = df.iloc[:, [0, 1, 2, 3, 4, 5, 7, 8]]
         y = df.iloc[:, 6].values
@@ -557,9 +541,13 @@ def predictionSingle(ID_conseiller):
         Nb_fils_direct = int(request.form['Nb_fils_direct'])
         Grade = int(request.form['Grade'])
         CE = float(request.form['CE'])
+        Pays = float(request.form['pays'])
+        Genre = float(request.form['genre'])
         CP = float(request.form['CP'])
         Nb_fils = int(request.form['Nb_fils'])
         Nb_fois_actif = int(request.form['Nb_fois_actif'])
+        Date_naissance = int(request.form['Date_naissance'])
+        Date_inscription = int(request.form['Date_inscription'])
 
         Pays_Tunisie = request.form['pays']
         if (Pays_Tunisie == 'Tunisie'):
@@ -634,7 +622,8 @@ def predictionSingle(ID_conseiller):
 
             sql = "INSERT INTO conseillers_prediction (ID_conseiller, Nom, Nb_fois_actif, Pays, Genre,Grade,Nb_fils_direct,Nb_fils,CE,CP,Date_naissance ,Date_inscription,Quitte,Probabilite_quitte) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s)"
             value = (
-                ID_conseiller, Nom, Nb_fois_actif, Pays, Genre, Grade, Nb_fils_direct, Nb_fils, CE, CP, Date_naissance ,Date_inscription, quitte, prediction_proba,)
+                ID_conseiller, Nom, Nb_fois_actif, Pays, Genre, Grade, Nb_fils_direct, Nb_fils, CE, CP, Date_naissance,
+                Date_inscription, quitte, prediction_proba,)
             cursor.execute(sql, value)
             mysql.connection.commit()
 
@@ -658,13 +647,6 @@ def predictionSingle(ID_conseiller):
 def prediction2():
     return render_template('ResultatPred.html', username=session['username'])
 
-class CustomUnpickler(pickle.Unpickler):
-
-    def find_class(self, module, name):
-        if name == 'Manager':
-            from settings import Manager
-            return Manager
-        return super().find_class(module, name)
 
 if __name__ == '__main__':
     app.run(debug=True)

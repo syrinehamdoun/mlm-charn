@@ -46,7 +46,7 @@ def preprocess_data(data):
 preprocessed_data = preprocess_data(df)
 # Étape 4: Configuration de l'environnement PyCaret et création du modèle
 # init
-exp = setup(data=preprocessed_data, target='Quitter', remove_outliers=True, normalize=True, fix_imbalance=True,
+exp = setup(data=preprocessed_data, target='quitter', remove_outliers=True, normalize=True, fix_imbalance=True,
             log_experiment=True, experiment_name='Churn')
 
 # création du modèle
