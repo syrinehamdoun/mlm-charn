@@ -149,25 +149,25 @@ div.upload input[type="file"] {
 <!--                                  </form>-->
 <!--                              </div>-->
 
-                           <form enctype="multipart/form-data" action="{{ url_for('uploadFiles') }}" method="POST">
-                                  <div class="col-sm-6">
+<!--                           <form enctype="multipart/form-data" action="{{ url_for('uploadFiles') }}" method="POST">-->
+<!--                                  <div class="col-sm-6">-->
 
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                             <input  type="submit"  value="Confirmer" style="font-weight: 400;line-height: 1.5;color: #495057;background-color: #dee2e6;border: 1px solid #ced4da;border-radius: .25rem;"/>
-                                          </div>
+<!--                                    <div class="input-group">-->
+<!--                                        <div class="input-group-prepend">-->
+<!--                                             <input  type="submit"  value="Confirmer" style="font-weight: 400;line-height: 1.5;color: #495057;background-color: #dee2e6;border: 1px solid #ced4da;border-radius: .25rem;"/>-->
+<!--                                          </div>-->
 
-                                        <div class="custom-file">
-                                            <input type="file" name="file" class="custom-file-input" id="customFileLang" lang="pl-Pl">
-                                            <label class="custom-file-label" for="customFileLang">Sélectionner la liste des conseillers
+<!--                                        <div class="custom-file">-->
+<!--                                            <input type="file" name="file" class="custom-file-input" id="customFileLang" lang="pl-Pl">-->
+<!--                                            <label class="custom-file-label" for="customFileLang">Sélectionner la liste des conseillers-->
 
-                                            </label>
-                                        </div>
+<!--                                            </label>-->
+<!--                                        </div>-->
 
-                                    </div>
+<!--                                    </div>-->
 
-                                  </div>
-                              </form>
+<!--                                  </div>-->
+<!--                              </form>-->
 
                             <br> <br>
 
@@ -227,7 +227,7 @@ div.upload input[type="file"] {
                        <td>{{row.Date_naissance}}</td>
                        <td>{{row.Date_inscription}}</td>
                        <td>{{row.Nb_fois_actif}}</td>
-                       <td>{{row.Quitter}}</td>
+                       <td>{{row.quitter}}</td>
 
 <td>
     <div class="btn-group">

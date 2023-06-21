@@ -142,8 +142,9 @@ def update_customer(ID_conseiller):
         Nb_fils = request.form['Nb_fils']
         Grade = request.form.get('Grade')
         NB_cheque = request.form['NB_cheque']
-        Prime_animation = request.form.get('Prime_animation')
         Prime_parrainage = request.form.get('Prime_parrainage')
+        Prime_animation = request.form.get('Prime_animation')
+        CE = request.form.get('CE')
         Date_naissance = request.form.get('Date_naissance')
         Date_inscription = request.form.get('Date_inscription')
         Nb_fois_actif = request.form.get('Nb_fois_actif')
@@ -151,9 +152,9 @@ def update_customer(ID_conseiller):
         # Check if account exists using MySQL
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('UPDATE conseillers set Nom=%s, Pays=%s,Genre=%s,Grade=%s,NB_cheque=%s,'
-                       'Prime_animation=%s,Prime_parrainage=%s,Date_naissance=%s,Date_inscription=%s,Nb_fois_actif=%s,Nb_fils=%s where ID_conseiller=%s',
+                       'Prime_animation=%s,Prime_parrainage=%s,Date_naissance=%s,Date_inscription=%s,Nb_fois_actif=%s,Nb_fils=%s,CE=%s where ID_conseiller=%s',
                        (nom, pays, genre, Grade, NB_cheque, Prime_animation, Prime_parrainage, Date_naissance,
-                        Date_inscription, Nb_fois_actif, Nb_fils, ID_conseiller))
+                        Date_inscription, Nb_fois_actif, Nb_fils, CE, ID_conseiller))
         mysql.connection.commit()
         msg = 'You have successfully updated!'
         account = cursor.fetchone()
@@ -189,7 +190,7 @@ def delete_customer_analyse(ID_conseiller):
 @app.route('/historique', methods=['POST', 'GET'])
 def historique():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cursor.execute('SELECT * FROM conseillers')
+    cursor.execute('SELECT * FROM conseillers limit 100')
     conseillers = cursor.fetchall()
 
     return render_template('historique.html', username=session['username'], conseillers=conseillers)
